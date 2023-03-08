@@ -1,0 +1,2660 @@
+fileFormatVersion: 2
+guid: 1b39f60f954989608bc576655abc8f8f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 600
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: enemies_crabcatcher_walk_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 552
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d080931b781a90dedbe2f9a97e4433ae
+      internalID: -2136266488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptagent_walk_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 551
+        width: 45
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc0433394bec6933db0eb1055a28f702
+      internalID: 1818038484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_land_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 554
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643934924bb152ca58c10b32c78d60ff
+      internalID: -1584457225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_9
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 556
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97dbaeacb27e69e488a856de02a69642
+      internalID: 160997766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_21
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 555
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aa17fbbb4d11a24d9ce3538d3ea40ce
+      internalID: 205458218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_walk_1
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 573
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03852fe4e09425a993bb09b30797b07
+      internalID: -698586476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_dead_2
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 559
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156c2d3e40dd74b88b94f88a0da268b5
+      internalID: 1172932745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_walk_1
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 573
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13eef719269c7644a9efdf1c3324efdf
+      internalID: 1990053830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_dead_2
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 559
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35095aaf220ea508959dbd94b4182b0
+      internalID: 122739674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptlizard_run_1
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 560
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ddc19b9005fcf5089b58b8eebf25ef7
+      internalID: 1844748859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_mercmonke_walk_1
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 540
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9adf0a6a2679b88eb897f2a10bc934f
+      internalID: 1844528539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_walk_2
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 544
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23426f0e0261db3a18c559db179eec78
+      internalID: 831194422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_dead_3
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 514
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a9846d1fa9f0d9588ad6a885d581a7
+      internalID: 1926088030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_walk_2
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 546
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff02218ee17fb290ebb51eee7a92ba65
+      internalID: -1098090388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_dead_3
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 513
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ee7cf24bf72097187eadd9c8303329
+      internalID: 476739884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptlizard_run_2
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 517
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d2e69280e2d308ee86cfa2a43e9a88a
+      internalID: 905620695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_crabcatcher_walk_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 499
+        width: 38
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d12f3d93447d5b60945a17b9f70d9b4
+      internalID: 1383403436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptagent_walk_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 500
+        width: 47
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcea8cf2b1837bfa9a3486ac25739696
+      internalID: 1295201877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_land_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 502
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4724db308f5dcd511ada52d903ac6ddb
+      internalID: 1945483737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_10
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 501
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c119194536df117a5820fe712cdc36c1
+      internalID: 2145614028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_22
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 501
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 326a2a4c131a07ce09b62e383bbade18
+      internalID: 506510629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_walk_3
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 514
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3169fa05e1ccfb9329c9399a0aa0fc54
+      internalID: 2005393851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_walk_3
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 515
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b43feaceba66170a9b035fdc161f05d
+      internalID: -1390090657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_mercmonke_walk_2
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 478
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c951dbb68e8bc6d6b8cebeb4d0f2405
+      internalID: -319538676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptagent_hurt_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 445
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54cbc616051b95be5bd28e3ac4dab64e
+      internalID: -1302757052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_land_3
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 451
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ba1e0ed655416cf9d437420958bcd9
+      internalID: 1529916510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 453
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2140f907158844413b025eaaa37d3cb6
+      internalID: -1966950682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hurt
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 454
+        width: 54
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1f4f3ebebe2c3d89ba3a051fcdca52
+      internalID: -470537346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_hurt_1
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 489
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15372916b315bc5a1b3db78eb91d37ba
+      internalID: 2078074696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_dead_4
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 471
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc65905b1add284bb9223262fe5be06d
+      internalID: 929381574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_hurt_1
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 489
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84af96e422c6178de8458f7328446186
+      internalID: 1973980318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_dead_4
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 474
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e184e1ebb5cad518590a0bea8d424c
+      internalID: -512361258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptlizard_hurt_1
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 480
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a1198958bdae7aba957c6921beacd24
+      internalID: 1397820063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_crabcatcher_walk_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 440
+        width: 38
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7399c353d7e59c1eb18f165a240111f
+      internalID: 799989420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_change_1
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 464
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c132c5eeb7ae44d5c948af7fd5ef3be8
+      internalID: 65623574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_change_1
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 463
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51dd2cb820dffeadd81edd55ed2ae494
+      internalID: -987055636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_mercmonke_walk_3
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 417
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a461ceac713c54caf8c2c2e52a4295
+      internalID: -311152785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_change_2
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 438
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3938370153081a5192b5021d94df4e6
+      internalID: 235697158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_dead_5
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 442
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89c878ab5550e23caafc4d04ec27bd1
+      internalID: 531338757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_change_2
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 437
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2359e7c6b02f93f1592c0242717dc179
+      internalID: 527216303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_dead_5
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 442
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17739b13b7aa9492bdcd3b84bbf63b4
+      internalID: -1496666407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptlizard_hurt_2
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 442
+        width: 42
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47311923f7ce3c66483ec8fcdcb1df72
+      internalID: 2004113234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_land_4
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 398
+        width: 49
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f89beab230689710b11688398ffe997
+      internalID: 641541460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_12
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 396
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94cd45f9166a91b43a33c134ebee0fdc
+      internalID: 2080251525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_change_3
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 413
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5df74fd9f43d27f89e2f0d1b86d3a9
+      internalID: 1090634670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_explode_1
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 391
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61796e0903d81a87ab9ac5f3006355e4
+      internalID: 1863546364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_change_3
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 412
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf64faae39e931e9295e8d44f3e3ad3a
+      internalID: 240425833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_explode_1
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 391
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c22d33ecbc7313f8c4042beb7b910c
+      internalID: 963435862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_crabcatcher_walk_4
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 389
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b838026c86eeedea8fee7d5c5707d05
+      internalID: -30765142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptagent_run_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 388
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60839337b6a6979e1bec5d3403cc0dba
+      internalID: -1731306336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 347
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1beecffa7ef32e3be8dabb98d7044944
+      internalID: -1537969455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_13
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 347
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 837a55c025cbaeeac95af6af4858e1c1
+      internalID: -1867046270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spawnpoint_1
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 345
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85d83ddbc9eb0264184b0e1cc1b3a392
+      internalID: 342772621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_change_4
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 381
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ac2a808f1453b43a4b1bf821c9ba77
+      internalID: -267952541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_explode_2
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 342
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37bd649622d6d988eb0cf8a81f69fe1a
+      internalID: -1556457230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_change_4
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 382
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc5d2ef66acabd9f9364c968882144b
+      internalID: -165543407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_explode_2
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 342
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0484f102fdf5dbb6ca7192129ae719c9
+      internalID: -1336454118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_mercmonke_walk_4
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 356
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3387616498494d7c8a96f2ea23e2c59b
+      internalID: -290537244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_crabcatcher_walk_5
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 338
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace0e7c401bad6f2cb3ecdafb6f69a2a
+      internalID: -87894027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptagent_run_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 335
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aad2d1e12503a6c50a9f6b14a041d88a
+      internalID: 1831386202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_change_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 348
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80568a6d3508bf907b64c572ecc08b01
+      internalID: 1512193254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_change_5
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 340
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fbada58a0a51805397cd25944773254
+      internalID: -889068923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_crabcatcher_walk_6
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 282
+        width: 37
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f16893da8b8c237f29e9edc0ad159125
+      internalID: -858883133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptagent_hurt_2
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 285
+        width: 47
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc21733625576256bd73baab3e7cb23
+      internalID: -2107827989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 298
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8728018893836b0e493bdd1d27241400
+      internalID: -1072445289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_14
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 298
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0430e4c0005886d5aaed71168e25f4b6
+      internalID: 756240394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spawnpoint_2
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 280
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c807671bafce3e0884a501d2547cc0c
+      internalID: -1651044637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_change_6
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 316
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19552cfe55c9977169b54abe41cc9684
+      internalID: -509456526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_explode_3
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 302
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5567af5bb8fcabe61a35907a8f22601a
+      internalID: -869475345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_explode_3
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 299
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350a827caa9e65f7abf2922952ec8a20
+      internalID: -879782974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_mercmonke_hurt
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 293
+        width: 55
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1cd000880e63d8479aca539f37e7c7d
+      internalID: 477967347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_crabcatcher_walk_7
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 233
+        width: 38
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d911a15ace91d285b2fa97c6ab0c8f2
+      internalID: 1845927445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptagent_hurt_3
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 230
+        width: 47
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 658bab6758f539878b30a886434e4172
+      internalID: -1058425265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_3
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 251
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8809fc483e892466090cdee5dfab85ed
+      internalID: 1263560558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_15
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 251
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a3be620db3c14538e93c4647f475f7
+      internalID: -201689507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_change_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 261
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2301003db4765babaee2dc48037c80
+      internalID: 1619627823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_change_6
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 261
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf67e8d04160357308b31d341f7eff25
+      internalID: 405673705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_mercmonke_coconut_3
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 241
+        width: 45
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8255b111dca74de29c5f81fa5496c80
+      internalID: 2136088293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_mercmonke_banana_1
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 233
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf68c53b2659da369883b48ee950314d
+      internalID: -273643315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_4
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 205
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6821f238401862c89bf681d31b2ab617
+      internalID: -449951346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_16
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 205
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8353b2a88dbadb23199602cce442270e
+      internalID: -1899588205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_run_1
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 213
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8f43233a51cf1ce9a75ab324075b925
+      internalID: -805925534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamewave_1
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 235
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a6c151ee035b67f0a8fe365bf392708
+      internalID: 27404475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_run_1
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 212
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a1197fe76cd7224bb1db73e46b6287f
+      internalID: -619130859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icewave_1
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 234
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb383e470096d7bccba5a9ddf61ba35c
+      internalID: 1197062597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_crabcatcher_walk_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 181
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5042cada9dd69bd88ab8bf281d3ea529
+      internalID: 783893633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamewave_2
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 208
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3917a1e5c280b881e9267764aa546730
+      internalID: 1892229927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icewave_2
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 207
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba3d6e873987eec7a36b73377b21928
+      internalID: -2027870139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_mercmonke_banana_2
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 173
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1594ec56eead29790a5fc1f77e3add47
+      internalID: 1326670316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_5
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 158
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8ee4361cb0a026591412afda70a736
+      internalID: -1266969551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_17
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 159
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa87677883d105449f1cd5bd2128260
+      internalID: -634197537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_run_2
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 159
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f9a15d454ea7860eb734f3546552941
+      internalID: -1741710445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamewave_3
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 176
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ce6d75302abe6e888dc3e4a4078327
+      internalID: 847086470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_run_2
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 159
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add3f629e2e6f292b9d09718e9782703
+      internalID: 1208510133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icewave_3
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 175
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6770ee694f8bf50f6b0cb6bb591fc0ea
+      internalID: 1193121073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_crabcatcher_walk_9
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 121
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5968f384e7f0aa54d8d1520a540dc696
+      internalID: 59794579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_6
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 109
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8f3ddd8edc718c298665045a677bf4
+      internalID: 1335256424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_18
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 111
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea00ed093efeeb7eaf1b0884525dfc7
+      internalID: -898224773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_run_3
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 106
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 120e7417607c45d7da1527da569db8b3
+      internalID: -691488897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_run_3
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 108
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd073857c95e43eae8032f194a397d4f
+      internalID: 1113633031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_mercmonke_banana_3
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 113
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b701cba95be1da39e8e3fd392e5dddbd
+      internalID: -1349277058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_mercmonke_coconut_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 57
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1542c0569f81ba1e49758540e9b3d69e
+      internalID: 632494622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_crabcatcher_hurt_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 64
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44a74defc502945eb814b29db075821
+      internalID: 318608418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_7
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 62
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773c032c38a18460c938b0438bd123d0
+      internalID: -785551908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_19
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 61
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c4d5948bbd78f07baacf76da4aebaf
+      internalID: 499315924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_hurt_2
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 62
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a502953b01b486f92a46ae2b8e0f5e
+      internalID: 313047830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_hurt_2
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 62
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cffa5eb23ea4ae83a59b114ac05cc32
+      internalID: 872821285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_crabcatcher_hurt_2
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 3
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f110a42ddff71e39ed05c731b9b5d3
+      internalID: -10265864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_8
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 10
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce84ef7a8d7b6162b5933b94c6015a7
+      internalID: 237458249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_reptbaby_hover_20
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 10
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d58912513f52b168b6cbc13b9292ee
+      internalID: 782463765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_flamey_dead_1
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 15
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a51ebd0b52f73930ac4a26c72189e16
+      internalID: 343846094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_icey_dead_1
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 15
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb970c9c47042a14a50dfe85ed4033a
+      internalID: 1033262484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies_mercmonke_coconut_2
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 1
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40fa430f098e6933ab78df58da46ae7
+      internalID: -415246479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      slice_enemies_128: -926162777
+      slice_enemies_101: -212193214
+      enemies_reptbaby_hover_16: -1899588205
+      enemies_reptagent_run_2: 1831386202
+      enemies_reptbaby_land_1: -1584457225
+      enemies_flamey_walk_3: 2005393851
+      enemies_reptbaby_hover_14: 756240394
+      enemies_flamey_dead_1: 343846094
+      enemies_icey_run_3: 1113633031
+      enemies_icey_change_6: 405673705
+      enemies_icey_explode_2: -1336454118
+      enemies_reptlizard_run_2: 905620695
+      slice_enemies_61: 2021919321
+      enemies_flamey_change_5: 1512193254
+      enemies_icey_dead_4: -512361258
+      enemies_crabcatcher_walk_4: -30765142
+      slice_enemies_6: -2088766190
+      enemies_reptagent_hurt_2: -2107827989
+      enemies_reptbaby_hurt: -470537346
+      enemies_reptagent_hurt_1: -1302757052
+      enemies_reptbaby_hover_5: -1266969551
+      slice_enemies_39: 720724398
+      enemies_flamey_change_2: 235697158
+      slice_enemies_103: -1504654595
+      slice_enemies_58: 104824333
+      slice_enemies_111: 512901468
+      enemies_reptlizard_hurt_1: 1397820063
+      slice_enemies_71: -438146897
+      enemies_reptbaby_hover_13: -1867046270
+      enemies_flamey_run_2: -1741710445
+      slice_enemies_129: 929911089
+      enemies_icey_dead_2: 122739674
+      enemies_flamey_dead_2: 1172932745
+      slice_enemies_137: 464904628
+      enemies_reptbaby_hover_21: 205458218
+      enemies_mercmonke_hurt: 477967347
+      enemies_icewave_2: -2027870139
+      enemies_mercmonke_walk_2: -319538676
+      enemies_icey_run_1: -619130859
+      slice_enemies_56: -873802320
+      enemies_flamey_explode_1: 1863546364
+      enemies_crabcatcher_walk_5: -87894027
+      slice_enemies_29: 42122205
+      enemies_flamey_explode_3: -869475345
+      enemies_icey_change_3: 240425833
+      enemies_flamey_dead_3: 1926088030
+      enemies_reptbaby_land_4: 641541460
+      enemies_icey_change_2: 527216303
+      enemies_reptbaby_hover_9: 160997766
+      enemies_reptagent_run_1: -1731306336
+      enemies_reptbaby_hover_10: 2145614028
+      slice_enemies_60: -706433931
+      enemies_crabcatcher_walk_2: 1383403436
+      enemies_mercmonke_walk_1: 1844528539
+      enemies_reptbaby_hover_20: 782463765
+      enemies_mercmonke_coconut_3: 2136088293
+      enemies_flamey_explode_2: -1556457230
+      slice_enemies_114: 1583779994
+      enemies_reptbaby_hover_4: -449951346
+      enemies_flamey_change_6: -509456526
+      enemies_icewave_1: 1197062597
+      enemies_flamey_hurt_1: 2078074696
+      enemies_icey_hurt_2: 872821285
+      slice_enemies_43: 550135421
+      enemies_reptbaby_hover_7: -785551908
+      enemies_reptlizard_run_1: 1844748859
+      enemies_reptbaby_hover_2: -1072445289
+      slice_enemies_41: -1571399979
+      enemies_reptbaby_land_3: 1529916510
+      enemies_flamewave_1: 27404475
+      enemies_mercmonke_banana_1: -273643315
+      enemies_reptbaby_hover_22: 506510629
+      enemies_crabcatcher_walk_9: 59794579
+      slice_enemies_83: -695647397
+      slice_enemies_27: -1494082721
+      spawnpoint_1: 342772621
+      enemies_flamey_hurt_2: 313047830
+      enemies_icey_explode_3: -879782974
+      slice_enemies_0: -1669151115
+      enemies_mercmonke_coconut_1: 632494622
+      enemies_icey_walk_2: -1098090388
+      slice_enemies_53: 1319418395
+      enemies_flamey_run_3: -691488897
+      enemies_mercmonke_walk_3: -311152785
+      enemies_crabcatcher_walk_3: 799989420
+      enemies_mercmonke_walk_4: -290537244
+      enemies_flamewave_3: 847086470
+      enemies_crabcatcher_walk_6: -858883133
+      enemies_reptbaby_hover_6: 1335256424
+      enemies_flamey_walk_1: -698586476
+      slice_enemies_104: -431308319
+      enemies_reptagent_hurt_3: -1058425265
+      enemies_reptbaby_hover_15: -201689507
+      enemies_reptbaby_hover_1: -1537969455
+      slice_enemies_37: 426116265
+      slice_enemies_125: 1960725372
+      enemies_reptbaby_hover_19: 499315924
+      enemies_reptbaby_land_2: 1945483737
+      enemies_flamewave_2: 1892229927
+      enemies_icewave_3: 1193121073
+      enemies_flamey_walk_2: 831194422
+      enemies_flamey_run_1: -805925534
+      slice_enemies_110: -1186607086
+      enemies_flamey_change_3: 1090634670
+      enemies_icey_dead_5: -1496666407
+      enemies_icey_change_5: -889068923
+      enemies_reptagent_walk_2: 1295201877
+      enemies_flamey_change_7: 1619627823
+      enemies_icey_run_2: 1208510133
+      slice_enemies_26: -605176529
+      enemies_mercmonke_coconut_2: -415246479
+      slice_enemies_49: 1334023526
+      enemies_flamey_change_4: -267952541
+      enemies_mercmonke_banana_3: -1349277058
+      enemies_crabcatcher_hurt_2: -10265864
+      slice_enemies_10: -1120425584
+      slice_enemies_54: -549420553
+      enemies_flamey_change_1: 65623574
+      slice_enemies_70: 1252613481
+      spawnpoint_2: -1651044637
+      slice_enemies_115: 1843314305
+      slice_enemies_30: -2038603586
+      enemies_flamey_dead_5: 531338757
+      enemies_flamey_dead_4: 929381574
+      enemies_crabcatcher_hurt_1: 318608418
+      enemies_icey_walk_3: -1390090657
+      slice_enemies_124: -960492328
+      enemies_crabcatcher_walk_7: 1845927445
+      enemies_icey_walk_1: 1990053830
+      enemies_reptbaby_hover_18: -898224773
+      enemies_icey_explode_1: 963435862
+      enemies_reptbaby_hover_17: -634197537
+      enemies_reptlizard_hurt_2: 2004113234
+      slice_enemies_100: -849659230
+      enemies_reptagent_walk_1: 1818038484
+      slice_enemies_12: 993690140
+      enemies_mercmonke_banana_2: 1326670316
+      enemies_icey_dead_1: 1033262484
+      slice_enemies_8: 1603694302
+      enemies_crabcatcher_walk_1: -2136266488
+      enemies_reptbaby_hover_12: 2080251525
+      enemies_crabcatcher_walk_8: 783893633
+      enemies_reptbaby_hover_3: 1263560558
+      slice_enemies_47: 1502695520
+      slice_enemies_82: -655895979
+      enemies_reptbaby_hover_8: 237458249
+      enemies_icey_change_1: -987055636
+      enemies_icey_change_4: -165543407
+      enemies_icey_hurt_1: 1973980318
+      enemies_reptbaby_hover_11: -1966950682
+      enemies_icey_dead_3: 476739884
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
