@@ -78,34 +78,55 @@ public class TileController : MonoBehaviour
         }
     }
 
-    public void SwapTile(Vector2 wavePosition, TileBase tileToSwap)
+    public void SwapTile(Vector2 waveHit, TileBase tileToSwap)
     {
-        Vector3Int touchPosition = platformsTilemap.WorldToCell(wavePosition);        
-        Vector3Int formerTilePosition = new Vector3Int(touchPosition.x - 1, touchPosition.y, touchPosition.z);
-        
-        if(platformsTilemap.HasTile(touchPosition)) {
-            platformsTilemap.SetTile(touchPosition, tileToSwap);
-            platformsTilemap.SetTile(formerTilePosition, tileToSwap); 
+        Vector3Int waveTile = platformsTilemap.WorldToCell(waveHit);        
+        //Vector3Int formerTilePosition = new Vector3Int(touchPosition.x - 1, touchPosition.y, touchPosition.z);
+        List<Vector3Int> crossTiles = AnyCrossTiles(waveTile);
+
+        foreach(Vector3Int tilePos in crossTiles) {
+            platformsTilemap.SetTile(tilePos, tileToSwap);
         }
     }
 
-    public float GetTileSpeedMod(Vector2 playerPosition)
+    public float GetTileSpeedMod(Vector2 playerHit)
     {
-        Vector3Int tilePosition = platformsTilemap.WorldToCell(playerPosition);
+        Vector3Int playerTile = platformsTilemap.WorldToCell(playerHit);
+        List<Vector3Int> crossTiles = AnyCrossTiles(playerTile);
+        //newTilePosition = new Vector3Int(tilePosition.x, tilePosition.y - 1, tilePosition.z);
 
-        newTilePosition = new Vector3Int(tilePosition.x, tilePosition.y - 1, tilePosition.z);
-
-        if(platformsTilemap.HasTile(newTilePosition)) {
-            TileBase tile = platformsTilemap.GetTile(newTilePosition);
-
-            if(tile == null){
-                return 1.0f;
-            }
-
-            return dataFromTiles[tile].speedMod;
+        if(crossTiles.Count > 0) {
+            TileBase tile = platformsTilemap.GetTile(crossTiles[0]);
+            
+            return dataFromTiles[tile].speedMod;            
         } else {
             return 1.0f;
         } 
+    }
+    // Checks all rectangularly contiguous spaces in tilemap and returns only the ones with tiles
+    private List<Vector3Int> AnyCrossTiles(Vector3Int centerPos)
+    {
+        List<Vector3Int> iniPosList = new List<Vector3Int>();
+        List<Vector3Int> finalPosList = new List<Vector3Int>();
+
+        Vector3Int upperPos = new Vector3Int(centerPos.x, centerPos.y + 1, centerPos.z);
+        Vector3Int lowerPos = new Vector3Int(centerPos.x, centerPos.y - 1, centerPos.z);
+        Vector3Int rightPos = new Vector3Int(centerPos.x + 1, centerPos.y, centerPos.z);
+        Vector3Int leftPos = new Vector3Int(centerPos.x - 1, centerPos.y, centerPos.z); 
+
+        iniPosList.Add(centerPos);
+        iniPosList.Add(upperPos);
+        iniPosList.Add(lowerPos);
+        iniPosList.Add(rightPos);
+        iniPosList.Add(leftPos);
+
+        foreach (Vector3Int tilePos in iniPosList) {
+            if(platformsTilemap.HasTile(tilePos)) {
+                finalPosList.Add(tilePos);
+            }
+        }
+
+        return finalPosList;
     }
 
     // public bool CheckForTile(Vector2 worldPosition)
