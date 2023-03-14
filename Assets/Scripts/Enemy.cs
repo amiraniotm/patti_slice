@@ -16,7 +16,7 @@ public class Enemy : Character
     protected Vector2 initialShakePosition;
     protected EnemyCounter enemyCounter;
     // Status variables
-    public bool canHover, isShaking, flippedVertical;
+    public bool canHover, isShaking, flippedVertical, doHover, hoverForward;
     protected float shakeMagnitude = 0.05f;
     
     protected override void Awake()
@@ -51,11 +51,17 @@ public class Enemy : Character
         if(isSpawning) {
             // Suspending enemy and moving it slowly while it spawns
             body.gravityScale = 0.0f;
-            walkSpeedMod = 0.3f;
+            walkSpeedMod = 0.5f;
         } else if(!isSpawning) {
             // Increasing gravity on falls for less "floaty" fall
             if(body.velocity.y < -0.1) {
-                body.gravityScale = downwardGravity;
+                if(!doHover) {
+                    body.gravityScale = downwardGravity;
+                } else {
+                    hoverForward = true;
+                    body.gravityScale = 0.0f;
+                    StartCoroutine(StopHoverCoroutine());
+                }
             // Setting regular gravity otherwise
             } else {
                 body.gravityScale = upwardGravity;
@@ -65,8 +71,10 @@ public class Enemy : Character
             body.gravityScale = spawnGravity;
         }
         // Checking movement conditions to call move functions for ground-based enemies
-        if(!flippedVertical && !canHover && !isDead && (isGrounded || isFalling)){
-            Walk();
+        if(!flippedVertical && !isDead){
+            if((((!canHover && (isGrounded || isFalling))) || hoverForward) || isSpawning) {
+                Walk();
+            }
         }
         // Setting animator variables after movement is resolved
         animator.SetBool("flippedVertical",flippedVertical);
@@ -93,7 +101,7 @@ public class Enemy : Character
         }
     }
 
-    protected void Respawn()
+    protected virtual void Respawn()
     {
         // Adding self to enemy counter queue
         string cleanName = gameObject.name.Replace("(Clone)", "");
@@ -117,6 +125,10 @@ public class Enemy : Character
         // Resetting x velocity modifier when grounded again
         if(collision.gameObject.tag == "Platforms"){
             walkSpeedMod = 1.0f;
+            if (canHover && !flippedVertical) {
+                Hold();
+                StartCoroutine(HoverCoroutine());
+            }
         } 
     }   
     // Called when platform below enemy is hit by player
@@ -189,15 +201,6 @@ public class Enemy : Character
         gameObject.SetActive(false);
         enemyCounter.EnemyDied(this);
     }
-
-    // protected void AdjustCollider()
-    // {
-    //     Vector3 newSize = new Vector3 ( mainRenderer.bounds.size.x / Math.Abs(transform.localScale.x),
-    //                                     mainRenderer.bounds.size.y / Math.Abs(transform.localScale.y),
-    //                                     mainRenderer.bounds.size.z / Math.Abs(transform.localScale.z) );
-
-    //     collider.size = newSize;
-    // }
     // Restarts normal movement after spawning is over
     private IEnumerator FinishSpawnCoroutine()
     {
@@ -227,5 +230,21 @@ public class Enemy : Character
             Jump();
             Unflip();
         }
+    }
+
+    private IEnumerator HoverCoroutine()
+    {
+        yield return new WaitForSeconds(spawningTime);
+
+        Jump();
+        doHover = true;
+    }
+
+    private IEnumerator StopHoverCoroutine()
+    {
+        yield return new WaitForSeconds(spawningTime);
+
+        hoverForward = false;
+        doHover = false;
     }
 }

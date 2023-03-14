@@ -30,7 +30,7 @@ public class Level : ScriptableObject
             //Adding each type of enemy to enemies dictionary
             levelEnemies[i].Add("Crabcatcher", 0);
             levelEnemies[i].Add("ReptAgent", 0);
-            levelEnemies[i].Add("ReptBaby", 0);
+            levelEnemies[i].Add("Reptbaby", 0);
             levelEnemies[i].Add("Flamey", 0);
             levelEnemies[i].Add("ReptLizard", 0);
             levelEnemies[i].Add("Icey", 0);
@@ -38,8 +38,8 @@ public class Level : ScriptableObject
             if(levelType == "beach") {
                 levelEnemies[i]["Crabcatcher"] = 1;
                 levelEnemies[i]["ReptAgent"] = 0;
-                levelEnemies[i]["ReptBaby"] = 0;
-                levelEnemies[i]["Flamey"] = 1;
+                levelEnemies[i]["Reptbaby"] = 1;
+                levelEnemies[i]["Flamey"] = 0;
                 levelEnemies[i]["ReptLizard"] = 0;
                 levelEnemies[i]["Icey"] = 0;
             } 

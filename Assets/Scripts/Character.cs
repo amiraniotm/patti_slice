@@ -45,7 +45,7 @@ public abstract class Character : MonoBehaviour
     protected virtual void Jump()
     {
         adjustedJumpSpeed = jumpSpeedMod * maxJumpSpeed;
-        
+
         if(isGrounded){
             body.velocity = new Vector2(body.velocity.x, adjustedJumpSpeed);
     

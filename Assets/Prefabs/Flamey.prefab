@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 5034529119967404730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.6, y: 12.35, z: 0}
-  m_LocalScale: {x: 29.338099, y: 29.338099, z: 29.338099}
+  m_LocalScale: {x: 29.338099, y: 29.338099, z: 29.3381}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -179,7 +179,6 @@ MonoBehaviour:
   upwardGravity: 1
   downwardGravity: 4
   spawnGravity: 20
-  walkSpeedMod: 1
   body: {fileID: 0}
   isDead: 0
   hasGhosts: 0
@@ -214,6 +213,7 @@ MonoBehaviour:
   ghostPrefab: {fileID: 2052379586512237674, guid: 04fd3ff61b57808f4926de3e51b7478d, type: 3}
   isCharacter: 1
   autoLeave: 0
+  selfDestruct: 0
   isVisible: 0
   screenWidth: 0
   screenHeight: 0

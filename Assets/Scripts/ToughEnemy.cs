@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class ToughEnemy : Enemy
@@ -20,8 +21,8 @@ public class ToughEnemy : Enemy
         base.Spawn();
         if(!explodes) {
             isMad = false;
-            animator.SetBool("isMad",isMad);
         }
+        animator.SetBool("isMad",isMad);
     }
 
     protected override void Update()
@@ -58,8 +59,22 @@ public class ToughEnemy : Enemy
             Jump();
             doChange = true;
             animator.SetTrigger("change");
-        } else {
+        } else if(!explodes) {
             base.FlipVertical();
+        } else {
+            Jump();
+            Hold();
+            animator.SetTrigger("vanish");
+            Invoke("Vanish", 0.5f);
+        }
+    }
+    // Preserving explode state on respawn
+    protected override void Respawn()
+    {
+        base.Respawn();
+
+        if(explodes){
+            doExplode = true;
         }
     }
     // Overriding Unflip to reset mad state
@@ -82,6 +97,15 @@ public class ToughEnemy : Enemy
         Vanish();
     }
 
+    protected void AdjustCollider()
+    {
+        Vector3 newSize = new Vector3 ( mainRenderer.bounds.size.x / Math.Abs(transform.localScale.x),
+                                        mainRenderer.bounds.size.y / Math.Abs(transform.localScale.y),
+                                        mainRenderer.bounds.size.z / Math.Abs(transform.localScale.z) );
+
+        charCollider.size = newSize;
+    }
+
     protected IEnumerator ChangeCoroutine()
     {
         // Holding enemy in mid-air while changing so its not so easy to hit them twice in a row
@@ -100,7 +124,9 @@ public class ToughEnemy : Enemy
             changeCount = 0.0f;
             isChanging = false;
             animator.SetBool("isMad",isMad);
-            //AdjustCollider();
+            if(explodes) {
+                AdjustCollider();
+            }
             // Starting auto-state reset coroutine 
             StartCoroutine(CalmDownCoroutine());
         // If already mad and "exploding" enemy, then second hit is instant vanish

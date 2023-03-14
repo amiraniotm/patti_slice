@@ -267,7 +267,7 @@ public class PlayerScript : Character
                 onIce = true;
             }
         } else {
-            walkSpeedMod = 0.75f;
+            walkSpeedMod = 0.65f;
         }       
 
         adjustedWalkSpeed = maxWalkSpeed * walkSpeedMod;
