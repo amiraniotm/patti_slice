@@ -11,7 +11,7 @@ public class Enemy : Character
     [SerializeField] public int bounty;
     [SerializeField] protected float spawningTime, unflipTime;
     // Coroutine references for recovery events, to make sure only one is happening at a time
-    private Coroutine lastUnflipCoroutine, lastShakeCoroutine;
+    private Coroutine lastUnflipCoroutine, lastShakeCoroutine, lastHoverCoroutine;
     // Position reference to control shake center (enemy shakes before unflipping), and enemy counter reference
     protected Vector2 initialShakePosition;
     protected EnemyCounter enemyCounter;
@@ -55,9 +55,9 @@ public class Enemy : Character
         } else if(!isSpawning) {
             // Increasing gravity on falls for less "floaty" fall
             if(body.velocity.y < -0.1) {
-                if(!doHover) {
+                if(!doHover || (canHover && flippedVertical)) {
                     body.gravityScale = downwardGravity;
-                } else {
+                } else if (!hoverForward) {
                     hoverForward = true;
                     body.gravityScale = 0.0f;
                     StartCoroutine(StopHoverCoroutine());
@@ -127,7 +127,7 @@ public class Enemy : Character
             walkSpeedMod = 1.0f;
             if (canHover && !flippedVertical) {
                 Hold();
-                StartCoroutine(HoverCoroutine());
+                lastHoverCoroutine = StartCoroutine(HoverCoroutine());
             }
         } 
     }   
@@ -137,6 +137,9 @@ public class Enemy : Character
         // Stop walking and Jump
         Hold();
         Jump();
+        if(lastHoverCoroutine != null) {
+            StopCoroutine(lastHoverCoroutine);    
+        }
         // Checking if already flipped
         if(!flippedVertical) {
             // Flipping if not, and start unflipping mechanisms
@@ -234,10 +237,11 @@ public class Enemy : Character
 
     private IEnumerator HoverCoroutine()
     {
-        yield return new WaitForSeconds(spawningTime);
+        yield return new WaitForSeconds(spawningTime / 2);
 
         Jump();
         doHover = true;
+        animator.SetTrigger("hover");
     }
 
     private IEnumerator StopHoverCoroutine()
@@ -246,5 +250,6 @@ public class Enemy : Character
 
         hoverForward = false;
         doHover = false;
+        animator.SetTrigger("stopHover");
     }
 }
