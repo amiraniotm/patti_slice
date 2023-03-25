@@ -12,9 +12,11 @@ public class SpawnPoint : MonoBehaviour
     [SerializeField] private EnemyCounter enemyCounter;
     // Control variable for spawning at intervals
     public bool readyToSpawn;
+    private Animator animator;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         // Spawn point on the left always spaws first
         if(transform.position.x < 0){
             readyToSpawn = false;
@@ -25,15 +27,25 @@ public class SpawnPoint : MonoBehaviour
 
     public void SpawnEnemy(string enemyType)
     {
+        animator.SetTrigger("spawn");
+        animator.SetBool("isSpawning", true);
         GameObject enemyToSpawn = enemyPool.GetPooledObject(enemyType); 
         enemyToSpawn.SetActive(true);
         enemyToSpawn.transform.position = transform.position;
         // Setting up initial enemy variables and restarting behavior
         Enemy enemyScript = enemyToSpawn.GetComponent<Enemy>();
+        StartCoroutine(StopAnimationCoroutine(enemyScript.spawningTime));
         // enemyScript.originPosition = transform.position;
         // enemyScript.spawnPoint = gameObject.GetComponent<SpawnPoint>();
         enemyScript.Spawn();
         // Marking that spawn point was last to spawn
         readyToSpawn = false;
+    }
+    
+    public IEnumerator StopAnimationCoroutine(float enemySpawnTime)
+    {
+        yield return new WaitForSeconds(enemySpawnTime);
+
+        animator.SetBool("isSpawning", false);
     }
 }

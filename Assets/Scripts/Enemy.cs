@@ -9,7 +9,7 @@ public class Enemy : Character
 
     // Name and how many points is an Enemy worth
     [SerializeField] public int bounty;
-    [SerializeField] protected float spawningTime, unflipTime;
+    [SerializeField] public float spawningTime, unflipTime;
     // Coroutine references for recovery events, to make sure only one is happening at a time
     private Coroutine lastUnflipCoroutine, lastShakeCoroutine, lastHoverCoroutine;
     // Position reference to control shake center (enemy shakes before unflipping), and enemy counter reference

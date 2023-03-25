@@ -3586,6 +3586,7 @@ MonoBehaviour:
   - {fileID: 4098626144607420166, guid: af58e1d767b4b1b7b9f0b14b73547e3f, type: 3}
   - {fileID: 5034529119967404730, guid: 4ae91d2e024cfabcfb6873c3c4dac358, type: 3}
   - {fileID: 2417691159973297537, guid: f68e276273207ebd5b16f0ee90164f7b, type: 3}
+  - {fileID: 2937761262982876761, guid: 56788873d52296673a4e259998ffaadb, type: 3}
   objectsToPool: 4
   pooledObjects: []
 --- !u!4 &1507667641
@@ -3614,6 +3615,7 @@ GameObject:
   - component: {fileID: 1549274825}
   - component: {fileID: 1549274824}
   - component: {fileID: 1549274826}
+  - component: {fileID: 1549274827}
   m_Layer: 0
   m_Name: SpawnPointL
   m_TagString: SpawnPoint
@@ -3703,6 +3705,26 @@ MonoBehaviour:
   enemyPool: {fileID: 1507667640}
   enemyCounter: {fileID: 388631463}
   readyToSpawn: 0
+--- !u!95 &1549274827
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549274823}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 352c0055fce124d0e8bca199fb9fbe1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1585750859
 GameObject:
   m_ObjectHideFlags: 0
@@ -8709,6 +8731,7 @@ GameObject:
   - component: {fileID: 1954245052}
   - component: {fileID: 1954245051}
   - component: {fileID: 1954245053}
+  - component: {fileID: 1954245054}
   m_Layer: 0
   m_Name: SpawnPointR
   m_TagString: SpawnPoint
@@ -8798,6 +8821,26 @@ MonoBehaviour:
   enemyPool: {fileID: 1507667640}
   enemyCounter: {fileID: 388631463}
   readyToSpawn: 0
+--- !u!95 &1954245054
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954245050}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 352c0055fce124d0e8bca199fb9fbe1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1976481695
 GameObject:
   m_ObjectHideFlags: 0
