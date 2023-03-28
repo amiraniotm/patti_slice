@@ -9,7 +9,7 @@ public class PauseController : MonoBehaviour
 
     // References to display that dims screen, and item controller to stop item spawn
     [SerializeField] LevelDisplay levelDisplay;
-    //[SerializeField] ItemController itemController;
+    [SerializeField] ItemController itemController;
     // Master controller to pause main game loop
     private MasterController masterController;
     public bool gamePaused;
@@ -27,11 +27,11 @@ public class PauseController : MonoBehaviour
             if(!gamePaused) {
                 Time.timeScale = 0;
             } else {
-            //     itemController.StartItems(2.0f);
+                itemController.StartItems(2.0f);
                 Time.timeScale = 1;
             }
 
-            //itemController.StopItems();
+            itemController.StopItems();
             levelDisplay.TogglePausePanel();
             //masterController.soundController.TogglePauseMusic();
             gamePaused = !gamePaused;

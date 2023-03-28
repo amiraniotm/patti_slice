@@ -27,7 +27,7 @@ public class MasterController : MonoBehaviour
     public Level currentLevel;
     public LevelDisplay levelDisplay;
     public EnemyCounter enemyCounter;
-    //public ItemController itemController;
+    public ItemController itemController;
     //public GameObject entryPoint, backgroundObject, playerObject, MDCObject;
     //public TileController tileController;
     //public SpriteRenderer backgroundRenderer;
@@ -103,12 +103,12 @@ public class MasterController : MonoBehaviour
         }
     }
 
-    // public void SetItemController(ItemController ICRef)
-    // {     
-    //     if(itemController == null) {
-    //         itemController = ICRef;
-    //     }
-    // }
+    public void SetItemController(ItemController ICRef)
+    {     
+        if(itemController == null) {
+            itemController = ICRef;
+        }
+    }
 
     // public void SetTileManager(TileController TMRef)
     // {     
@@ -161,7 +161,7 @@ public class MasterController : MonoBehaviour
     {
         // Checking for phase or level change conditions
         if(enemyCounter.totalEnemies == 0){
-            //itemController.StopItems();        
+            itemController.StopItems();        
             if(currentPhaseKey < currentLevel.levelPhases) {
                 //levelDisplay.timePanel.SetActive(false);
                 startingScroll = true;
@@ -274,6 +274,7 @@ public class MasterController : MonoBehaviour
         if(phaseType == "enemy") {
             levelStarted = true;
             Time.timeScale = 1;
+            itemController.StartItems(5.0f);
         } else if(phaseType == "scroll") {
             scrollPhase = true;
             currentPhaseKey += 1;

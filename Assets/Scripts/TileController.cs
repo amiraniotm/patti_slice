@@ -129,12 +129,12 @@ public class TileController : MonoBehaviour
         return finalPosList;
     }
 
-    // public bool CheckForTile(Vector2 worldPosition)
-    // {
-    //     Vector3Int tilePosition = platformsTilemap.WorldToCell(worldPosition);
+    public bool CheckForTile(Vector2 worldPosition)
+    {
+        Vector3Int tilePosition = platformsTilemap.WorldToCell(worldPosition);
 
-    //     return platformsTilemap.HasTile(tilePosition);
-    // }
+        return platformsTilemap.HasTile(tilePosition);
+    }
 
     // public void SetLevelTiles(int levelKey)
     // {
