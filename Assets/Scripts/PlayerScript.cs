@@ -104,7 +104,7 @@ public class PlayerScript : Character
         }
 
         // Flipping item if any on inventory
-        if(inventory.currentItem != null) {
+        if(inventory.currentItem != null && !inventory.currentItem.onUse) {
             if((!flippedHorizontal && !inventory.currentItem.flippedHorizontal) || (flippedHorizontal && inventory.currentItem.flippedHorizontal)) {
                 inventory.currentItem.transform.localScale *= new Vector2(-1,1);
                 inventory.currentItem.flippedHorizontal = !inventory.currentItem.flippedHorizontal;

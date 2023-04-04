@@ -40,7 +40,7 @@ public class ItemController : MonoBehaviour
         itemWeights.Add("ExtraTime", 80);
         itemWeights.Add("AttackPincer", 50);
         //itemWeights.Add("HardShell", 50);
-        //itemWeights.Add("BoomerangPincer", 40);
+        itemWeights.Add("BoomerangPincer", 40000);
 
         //originalSpawnTime = spawnTime;
         //originalWeights = itemWeights;
