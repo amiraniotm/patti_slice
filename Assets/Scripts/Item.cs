@@ -29,20 +29,21 @@ public abstract class Item : MonoBehaviour
     // Disabling item at end of life cycle, and returning it to untouched state
     public virtual void Vanish()
     {
+        StopAllCoroutines();
         gameObject.SetActive(false);
         wasTaken = false;
     }
 
-    // public virtual void SetInitialPosition()
-    // {
-    //     initialPosition = transform.position;
-    //     StartCoroutine(VanishCoroutine());
-    // }
     // Automatically disabling item if player didnt get it
+    public virtual void StartVanishCoroutine()
+    {
+        StartCoroutine(VanishCoroutine());
+    }
+    
     public virtual IEnumerator VanishCoroutine()
     {
         yield return new WaitForSeconds(vanishTime);
-
+        
         if(!wasTaken) {
             Vanish();
         }
