@@ -11,7 +11,7 @@ public class PlayerScript : Character
     // References for objects which with player interacts
     [SerializeField] private PlayerSpawnPlatform spawnPlatform;
     [SerializeField] private TileController tileController;
-    //[SerializeField] private PauseController pauseController;
+    [SerializeField] private PauseController pauseController;
     // Sound references for SFX
     [SerializeField] private AudioClip jumpSound;
     //[SerializeField] private AudioClip enemyCollisionSound;
@@ -23,7 +23,7 @@ public class PlayerScript : Character
     protected Vector2 raycastOrigin, raycastDirection;
     protected float raycastMaxDistance;
     // Runtime components
-    //private Inventory inventory; 
+    private Inventory inventory; 
     // Status variables for item and platform effect
     public bool isShelled, onIce;
     private float currentJumpTimer; 
@@ -31,8 +31,7 @@ public class PlayerScript : Character
     protected override void Awake()
     {
         base.Awake();
-
-        //inventory = GetComponent<Inventory>();
+        inventory = GetComponent<Inventory>();
     }
     
     private void Start()
@@ -43,7 +42,7 @@ public class PlayerScript : Character
     private void Update()
     {      
         //Ignoring all input and movement if game is paused
-        //if(!pauseController.gamePaused) {
+        if(!pauseController.gamePaused) {
             //Checking if player is on spawn movement (blocks input)
             if(!isSpawning){            
                 //Checking ground each frame for tile effects
@@ -81,7 +80,7 @@ public class PlayerScript : Character
             animator.SetBool("isWalking", isWalking);
             animator.SetBool("isFalling", isFalling && !isGrounded);
             animator.SetBool("isDead",isDead);
-        //}  
+        }  
     }
 
     protected void SetInputVelocity(float horizontalInput)
@@ -181,12 +180,12 @@ public class PlayerScript : Character
     private void CheckForShell()
     {
         // Checking if player currently has shell item to defend from collision
-        // if(inventory.currentItem != null && inventory.currentItem.itemType == "shell") {
-        //     inventory.currentItem.UseEffect();
+        if(inventory.currentItem != null && inventory.currentItem.itemName == "hard shell") {
+            inventory.currentItem.UseEffect();
         // If not, player is defeated
-        // } else {
+        } else {
             TriggerDefeat();
-        // }
+        }
     }
 
     public void TriggerDefeat()

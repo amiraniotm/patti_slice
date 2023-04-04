@@ -9,12 +9,13 @@ public abstract class Item : MonoBehaviour
     // Assignable name and active time
     [SerializeField] public string itemName;
     [SerializeField] protected float vanishTime = 5.0f;
-    // Runtime vars 
+    // Runtime vars - some are only used in specific item types
     protected ItemController itemController;
     protected MasterController masterController;
     protected Vector3 initialPosition;
     protected BoxCollider2D itemCollider;
     protected PlayerScript player;
+    protected bool wasTaken;
     
     protected virtual void Awake()
     {
@@ -23,25 +24,26 @@ public abstract class Item : MonoBehaviour
         itemController = GameObject.FindGameObjectWithTag("ItemController").GetComponent<ItemController>();
         masterController = GameObject.FindGameObjectWithTag("MasterController").GetComponent<MasterController>();
     }
-
+    // Every item must have a collision interaction
     protected abstract void OnTriggerEnter2D(Collider2D otherCollider);
-
-    protected virtual void Vanish()
+    // Disabling item at end of life cycle, and returning it to untouched state
+    public virtual void Vanish()
     {
         gameObject.SetActive(false);
+        wasTaken = false;
     }
 
-    public virtual void SetInitialPosition()
-    {
-        initialPosition = transform.position;
-        StartCoroutine(VanishCoroutine());
-    }
-
+    // public virtual void SetInitialPosition()
+    // {
+    //     initialPosition = transform.position;
+    //     StartCoroutine(VanishCoroutine());
+    // }
+    // Automatically disabling item if player didnt get it
     public virtual IEnumerator VanishCoroutine()
     {
         yield return new WaitForSeconds(vanishTime);
 
-        if(transform.position == initialPosition) {
+        if(!wasTaken) {
             Vanish();
         }
     }

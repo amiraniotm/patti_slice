@@ -859,6 +859,7 @@ GameObject:
   - component: {fileID: 295300543}
   - component: {fileID: 295300542}
   - component: {fileID: 295300546}
+  - component: {fileID: 295300547}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1052,6 +1053,7 @@ MonoBehaviour:
   onBot: 0
   spawnPlatform: {fileID: 573719922}
   tileController: {fileID: 432793145}
+  pauseController: {fileID: 1123396302}
   jumpSound: {fileID: 8300000, guid: 6b45125e1fd90c8cd9bea04b9dbdd5f5, type: 3}
   maxJumpTime: 0.25
   isShelled: 0
@@ -1076,6 +1078,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &295300547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295300539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a8170c4fd37ecc7b5b430f13632ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentItem: {fileID: 0}
 --- !u!1 &388631462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,7 +1124,7 @@ MonoBehaviour:
   - {fileID: 1954245053}
   - {fileID: 1549274826}
   availableBosses: []
-  spawnInterval: 2
+  spawnInterval: 3
   currentEnemies: []
   spawnQ: []
   masterController: {fileID: 0}
@@ -9148,7 +9163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseController: {fileID: 1123396302}
-  tileController: {fileID: 432793145}
   platformMask:
     serializedVersion: 2
     m_Bits: 256
