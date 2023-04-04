@@ -12,11 +12,11 @@ public abstract class Character : MonoBehaviour
     //References for platform behavior, graphical and collision components for animations and screen wrapping
     protected PlatformCollision platforms;
     protected Renderer mainRenderer;
-    protected BoxCollider2D charCollider; 
     protected SpriteRenderer spriteRenderer;
     protected ScreenWrap screenWrap;
     protected MasterController masterController;   
     protected Animator animator;
+    public BoxCollider2D charCollider; 
     public Rigidbody2D body;  
     //Storing initial position for respawn
     protected Vector2 initialPosition;

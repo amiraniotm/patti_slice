@@ -97,19 +97,18 @@ public class PlayerScript : Character
 
     protected void FlipHorizontal(float horizontalInput)
     {
-        bool doFlip = false;
         //Flipping player sprite when walking. Using 0.01 for input tolerance
         if((horizontalInput > 0.01f && !flippedHorizontal) || (horizontalInput < -0.01f && flippedHorizontal)){
-            doFlip = true;
+              transform.localScale *= new Vector2(-1,1);
+            flippedHorizontal = !flippedHorizontal;
         }
 
-        if(doFlip) {
-            transform.localScale *= new Vector2(-1,1);
-            flippedHorizontal = !flippedHorizontal;
-            // if(inventory.currentItem != null && !inventory.currentItem.flippedHorizontal) {
-            //     inventory.currentItem.transform.localScale *= new Vector2(-1,1);
-            //     inventory.currentItem.flippedHorizontal = !inventory.currentItem.flippedHorizontal;
-            // }
+        // Flipping item if any on inventory
+        if(inventory.currentItem != null) {
+            if((!flippedHorizontal && !inventory.currentItem.flippedHorizontal) || (flippedHorizontal && inventory.currentItem.flippedHorizontal)) {
+                inventory.currentItem.transform.localScale *= new Vector2(-1,1);
+                inventory.currentItem.flippedHorizontal = !inventory.currentItem.flippedHorizontal;
+            }
         }
     }
 

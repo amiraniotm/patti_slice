@@ -1037,11 +1037,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe0868b093840d4287715faa6022776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWalkSpeed: 10
+  maxWalkSpeed: 12
   maxJumpSpeed: 11
   upwardGravity: 5
   downwardGravity: 12
   spawnGravity: 50
+  charCollider: {fileID: 0}
   body: {fileID: 0}
   isDead: 0
   hasGhosts: 0
@@ -2724,6 +2725,7 @@ MonoBehaviour:
   objectPrefabs:
   - {fileID: 8764897829027460692, guid: 784bd39b9fbe71d018efc469f677e967, type: 3}
   - {fileID: 6208903329318610434, guid: 081a7c87dd787c8c4a19e48e18847618, type: 3}
+  - {fileID: 4127131544673815740, guid: 1ff6b84f77ecb5e2c84ad853419ced5c, type: 3}
   objectsToPool: 5
   pooledObjects: []
 --- !u!1 &1257052417
@@ -9169,6 +9171,7 @@ MonoBehaviour:
   itemNames:
   - ExtraLife
   - ExtraTime
+  - AttackPincer
   itemPool: {fileID: 1200411481}
   spawnTime: 5
   itemLimit: 5

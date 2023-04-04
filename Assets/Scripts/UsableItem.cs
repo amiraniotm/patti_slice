@@ -16,7 +16,6 @@ public abstract class UsableItem : Item
     // Inventory, animator and scale references (for items that change scale on use)
     public Inventory playerInventory;
     protected Animator animator;
-    public Vector3 originalScale;
     // Every usable item has an effect
     public abstract void UseEffect();
 
@@ -28,7 +27,6 @@ public abstract class UsableItem : Item
 
         playerInventory = player.gameObject.GetComponent<Inventory>();
         animator = GetComponent<Animator>();
-        originalScale = transform.localScale;
         usesLeft = maxUses;
     }
 
@@ -75,11 +73,11 @@ public abstract class UsableItem : Item
     {
         base.Vanish();
 
-        transform.localScale = originalScale;
         wasTaken = false;
         onUse = false;
         usesLeft = maxUses;
         itemCollider.enabled = true;
+        flippedHorizontal = false;
     }
     // Used to interrupt use in case of player defeat, etc
     public abstract void FinishUse();

@@ -38,7 +38,7 @@ public class ItemController : MonoBehaviour
         // Weighted system: adjust down for less chance of item
         itemWeights.Add("ExtraLife", 80);
         itemWeights.Add("ExtraTime", 80);
-        //itemWeights.Add("AttackPincer", 50);
+        itemWeights.Add("AttackPincer", 50);
         //itemWeights.Add("HardShell", 50);
         //itemWeights.Add("BoomerangPincer", 40);
 
