@@ -179,7 +179,7 @@ public class PlayerScript : Character
     private void CheckForShell()
     {
         // Checking if player currently has shell item to defend from collision
-        if(inventory.currentItem != null && inventory.currentItem.itemName == "hard shell") {
+        if(inventory.currentItem != null && inventory.currentItem.itemName == "HardShell") {
             inventory.currentItem.UseEffect();
         // If not, player is defeated
         } else {
