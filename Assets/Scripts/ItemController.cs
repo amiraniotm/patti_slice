@@ -7,25 +7,23 @@ public class ItemController : MonoBehaviour
 {
     // Controls items spawning and despawning, and player-item interaction
 
-    // Runtime objects to pause, locate, validate item position...
+    // Editor variables to pause item spawn and locate and validate item position
     [SerializeField] private PauseController pauseController;
     [SerializeField] private LayerMask platformMask;
-    // Name list for weighted item chance and registry
-    [SerializeField] private List<string> itemNames = new List<string>();
-    //[SerializeField] private Inventory playerInventory;
     //[SerializeField] private AudioClip itemGotSound, enemyCollisionSound, itemAppearSound;
     [SerializeField] private ObjectPool itemPool;
     [SerializeField] private float spawnTime, weightAdjust;
     [SerializeField] private int itemLimit = 5;
-    // Inner references
+    // Runtime vars: name list for weighted item chance and registry, item zone limits off-screen appearance
+    private List<string> itemNames = new List<string>();
     private BoxCollider2D itemZone;
     private MasterController masterController;
     // Weighted chance control
     private Dictionary<string,float> itemWeights = new Dictionary<string, float>();
     //private Dictionary<string,int> originalWeights = new Dictionary<string, int>();
-    // control variables for item on-screen
     //private float originalSpawnTime;
     //private List<string> originalItemNames = new List<string>();
+    // Control variables for item on-screen
     public GameObject currentItem;
     public Item currentItemScript;
     private Vector2 newItemPos;
@@ -41,6 +39,8 @@ public class ItemController : MonoBehaviour
         itemWeights.Add("AttackPincer", 50);
         itemWeights.Add("BoomerangPincer", 40);
         itemWeights.Add("HardShell", 50);
+
+        itemNames = new List<string>(itemWeights.Keys);
 
         //originalSpawnTime = spawnTime;
         //originalWeights = itemWeights;
@@ -95,14 +95,14 @@ public class ItemController : MonoBehaviour
         ///itemWeights = originalWeights;
         itemLimit = 5;
     }
-    // Fairer item limit: returns item counter if player didnt pick item
+    // Fairer item limit: sets back item counter if player didnt pick item
     public void CheckItemRestablish(bool itemWasTaken)
     {
         if(!itemWasTaken) {
             itemLimit += 1;
         }
     }
-
+    // SFX functions
     // public void ItemGot()
     // {
     //     masterController.soundController.PlaySound(itemGotSound, 0.2f);
@@ -112,8 +112,7 @@ public class ItemController : MonoBehaviour
     // {
     //     masterController.soundController.PlaySound(enemyCollisionSound, 0.4f);
     // }
-
-    
+ 
     // public void SetItemsForBoss(int levelKey) 
     // {        
     //     if(levelKey == 1){
@@ -123,7 +122,7 @@ public class ItemController : MonoBehaviour
     //         spawnTime = 6.0f;
     //     }
     // }
-    // Coroutine is always trying to spawn an item until it manages to do so
+    // When called is always trying to spawn an item until it manages to do so
     private IEnumerator SetNewItemCoroutine()
     {
         // Runcount is used to have an exit to infinite loop
@@ -145,7 +144,7 @@ public class ItemController : MonoBehaviour
                 currentItem = itemPool.GetPooledObject(itemToPlace);
                 // Adjusting weight down every time an item is placed, to diminish repeated item probability
                 itemWeights[itemToPlace] /= weightAdjust;
-
+                // Setting item
                 if(currentItem != null) {
                     currentItem.SetActive(true);
                     currentItem.transform.position = newItemPos;
@@ -156,9 +155,9 @@ public class ItemController : MonoBehaviour
                     itemLimit -= 1;
                 }
             } 
-
-            runCount += 1;
             // Exiting loop if 1000 unsuccessful executions 
+            runCount += 1;
+            
             if(runCount > 1000) {
                 itemSet = true;
             }

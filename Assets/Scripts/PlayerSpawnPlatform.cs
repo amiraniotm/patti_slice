@@ -6,11 +6,10 @@ public class PlayerSpawnPlatform : MonoBehaviour
 {
     // Script for the Platform where the player goes down as is spawning
 
-    // Reference to the player and initial movement variables 
+    // Editor vars for player and initial movement 
     [SerializeField] private PlayerScript player;
     [SerializeField] public float spawnTime, holdTime, spawnSpeed;
-    
-    // Internal movement variables
+    // Runtime movement vars
     private bool isHolding;
     private float spawnCount;
     private Vector2 initialPosition;
@@ -20,10 +19,9 @@ public class PlayerSpawnPlatform : MonoBehaviour
     {
         initialPosition = transform.position;
     }
-
+    // Spawn Counter kickstarts movement
     public void SetSpawnCounter()
     {
-        // Spawn Counter kickstarts movement
         spawnCount = spawnTime;
     }
 

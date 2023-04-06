@@ -12,12 +12,13 @@ public class SpawnPoint : MonoBehaviour
     [SerializeField] private EnemyCounter enemyCounter;
     // Control variable for spawning at intervals
     public bool readyToSpawn;
+    // Animator for little rustle animation while spawning
     private Animator animator;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        // Spawn point on the left always spaws first
+        // Spawn point on the right always spaws first
         if(transform.position.x < 0){
             readyToSpawn = false;
         }else{
@@ -35,13 +36,11 @@ public class SpawnPoint : MonoBehaviour
         // Setting up initial enemy variables and restarting behavior
         Enemy enemyScript = enemyToSpawn.GetComponent<Enemy>();
         StartCoroutine(StopAnimationCoroutine(enemyScript.spawningTime));
-        // enemyScript.originPosition = transform.position;
-        // enemyScript.spawnPoint = gameObject.GetComponent<SpawnPoint>();
         enemyScript.Spawn();
-        // Marking that spawn point was last to spawn
+        // Marking working spawnpoint was last to spawn
         readyToSpawn = false;
     }
-    
+    // Stop animation after spawning is done
     public IEnumerator StopAnimationCoroutine(float enemySpawnTime)
     {
         yield return new WaitForSeconds(enemySpawnTime);

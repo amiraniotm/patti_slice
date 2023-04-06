@@ -9,7 +9,7 @@ public class BoomerangPincer : UsableItem
 
     // Movement control variables to config on editor (speed and farthest point time)
     [SerializeField] private float throwSpeed, holdTime;
-    // 
+    // Control variables for direction, airborne timer, player velocity for initial throw, and end-of-course markers
     private int directionMod;
     private float throwCount, initialPlayerXVelocity;
     private bool comeBack, onHold;
@@ -19,13 +19,12 @@ public class BoomerangPincer : UsableItem
     protected override void Awake()
     {
         base.Awake();
-
         body = GetComponent<Rigidbody2D>();
     }
 
     public override void UseEffect()
     {
-        // Equating the counter to the use time for airborne countdown
+        // Setting airborne variables: counter, collider, animator
         throwCount = useTime;
         onUse = true;
         itemCollider.enabled = true;
@@ -58,10 +57,10 @@ public class BoomerangPincer : UsableItem
             // Going away from player
             if(!comeBack && !onHold) {
                 body.velocity = new Vector2(directionMod * (initialPlayerXVelocity + throwSpeed), body.velocity.y);
-            // Coming back to player
+            // Chasing back to player
             } else if(comeBack && !onHold) { 
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.5f);
-            // Holding on farthest point from player
+            // Holding on farthest point from throw point
             } else if(onHold) {
                 body.velocity = Vector2.zero;
             }
@@ -87,7 +86,7 @@ public class BoomerangPincer : UsableItem
                         );
                 
                 transform.position = newPos;
-            // Marking farthest point at half the use time
+            // Stoppong at farthest point at half the use time
             } else {
                 if((throwCount < (useTime / 2)) && !onHold && !comeBack) {
                     onHold = true;

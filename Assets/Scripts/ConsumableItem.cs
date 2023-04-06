@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class ConsumableItem : Item
 {
-    // Abstract item class: items consumed on touch
+    // Abstract item class: items with one-time effect, consumed on touch
     
     protected abstract void ApplyEffect();
 

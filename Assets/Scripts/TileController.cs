@@ -16,23 +16,25 @@ public class TileController : MonoBehaviour
     [SerializeField] private float flipDuration;
     // Dict to store current tiles and tile types on map
     private Dictionary<TileBase,TileData> dataFromTiles;
-    // // Runtime objects references
+    // Runtime objects references
     // private Renderer[] platformRenderers;
     // public MasterController masterController;
-    // //public BoxCollider2D playerCollider;
-    // // Control variables
+    // public BoxCollider2D playerCollider;
+    // Control variables
     private Vector3Int newTilePosition;
     // public bool platformsMoved;
     private BoxCollider2D flipCollider;
     
     private void Awake()
     {
+        // Flip collider is used to flip enemies
         flipCollider = GetComponent<BoxCollider2D>();
+        // Getting initial tiles on map
+        RefreshTileList();
         //platformRenderers = platformObject.GetComponentsInChildren<Renderer>();
         //playerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>();
         //masterController = GameObject.FindGameObjectWithTag("MasterController").GetComponent<MasterController>();
         //masterController.SetTileManager(this);
-        RefreshTileList();
     }
 
     // private void Update()
@@ -52,6 +54,7 @@ public class TileController : MonoBehaviour
 
     public void RefreshTileList()
     {
+        // Stores each tile for control
         dataFromTiles = new Dictionary<TileBase,TileData>();
 
         foreach(var tileData in tileDatas) {
@@ -77,28 +80,28 @@ public class TileController : MonoBehaviour
             enemy.FlipVertical();
         }
     }
-
+    // Swap tile is used by element waves, which swap normal tiles for debuff tiles
     public void SwapTile(Vector2 waveHit, TileBase tileToSwap)
     {
-        Vector3Int waveTile = platformsTilemap.WorldToCell(waveHit);        
-        //Vector3Int formerTilePosition = new Vector3Int(touchPosition.x - 1, touchPosition.y, touchPosition.z);
+        // Detecting cross tiles from collision tile as collision-position is not always reliable, and to swap adjacent tiles too    
+        Vector3Int waveTile = platformsTilemap.WorldToCell(waveHit);    
         List<Vector3Int> crossTiles = AnyCrossTiles(waveTile);
 
         foreach(Vector3Int tilePos in crossTiles) {
             platformsTilemap.SetTile(tilePos, tileToSwap);
         }
     }
-
+    // Used by player to get the speed modifier of tile below
     public float GetTileSpeedMod(Vector2 playerHit)
     {
         Vector3Int playerTile = platformsTilemap.WorldToCell(playerHit);
         List<Vector3Int> crossTiles = AnyCrossTiles(playerTile);
-        //newTilePosition = new Vector3Int(tilePosition.x, tilePosition.y - 1, tilePosition.z);
-
+        // Gets modifier from first cross-tile, that should almost always be the one that is below player
         if(crossTiles.Count > 0) {
             TileBase tile = platformsTilemap.GetTile(crossTiles[0]);
             
-            return dataFromTiles[tile].speedMod;            
+            return dataFromTiles[tile].speedMod;     
+        // Default return in case there are no tiles detected       
         } else {
             return 1.0f;
         } 
@@ -128,7 +131,7 @@ public class TileController : MonoBehaviour
 
         return finalPosList;
     }
-
+    // Checks if tile is present at given position
     public bool CheckForTile(Vector2 worldPosition)
     {
         Vector3Int tilePosition = platformsTilemap.WorldToCell(worldPosition);
@@ -166,10 +169,9 @@ public class TileController : MonoBehaviour
 
     //     return false;
     // }
-
+    // Finishing flip by disabling flip collider
     private IEnumerator HideFlipColliderCoroutine()
     {
-        // Finishing flip by disabling flip collider
         yield return new WaitForSeconds(flipDuration);
 
         flipCollider.enabled = false;

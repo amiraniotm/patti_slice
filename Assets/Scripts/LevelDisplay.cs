@@ -93,8 +93,7 @@ public class LevelDisplay : MonoBehaviour
     {
         float resetCounter = resetDelay;
 
-        while (resetCounter > 0)
-        {
+        while (resetCounter > 0){
             resetCounter -= Time.unscaledDeltaTime;
             
             yield return 0;

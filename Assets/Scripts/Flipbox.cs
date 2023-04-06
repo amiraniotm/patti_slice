@@ -33,14 +33,16 @@ public class Flipbox : HittableBlock
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Use mechanics triggered when hit by player from below
         if(collision.gameObject.tag == "Player"){
             string collisionSide = DetectCollisionDirection(collision);
-            // Use mechanics triggered when hit by player from below
+
             if(collisionSide == "upper" && flipCount > 0) {
                 enemyCounter.FlipAll();
                 flipCount -= 1;
                 mainCamera.TriggerShake();
                 //soundController.PlaySound(powSound, 0.4f);
+                // Makeshift animation by changing sprite on use
                 if(flipCount > 0) {
                     ChangeSprite();
                 }

@@ -6,7 +6,7 @@ public abstract class UsableItem : Item
 {
     // Abstract item class: items that stay on inventory and can be used
 
-    // Control variables: how much can an item be used, how long the effect lasts and if its used by keypress
+    // Editor vars: how much can an item be used, how long the effect lasts and if its used by keypress
     [SerializeField] public int maxUses;
     [SerializeField] public float useTime;
     [SerializeField] public bool keyTriggered;
@@ -16,7 +16,7 @@ public abstract class UsableItem : Item
     // Inventory, animator and scale references (for items that change scale on use)
     public Inventory playerInventory;
     protected Animator animator;
-    // Every usable item has an effect
+    // Every usable item has an effect and a late update bind to follow player and others
     public abstract void UseEffect();
 
     protected abstract void LateUpdate();
@@ -53,13 +53,6 @@ public abstract class UsableItem : Item
         //     bossScript.TakeDamage();
         // }
     }
-
-    // public override void SetInitialPosition()
-    // {
-    //     base.SetInitialPosition();
-
-        
-    // }
     // Every item vanishes after running out of uses
     protected virtual void CheckUses()
     {

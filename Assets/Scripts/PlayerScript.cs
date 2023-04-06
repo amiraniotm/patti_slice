@@ -8,7 +8,7 @@ public class PlayerScript : Character
 {
     // Player Character control script
 
-    // References for objects which with player interacts
+    // Editor vars for objects which with player interacts
     [SerializeField] private PlayerSpawnPlatform spawnPlatform;
     [SerializeField] private TileController tileController;
     [SerializeField] private PauseController pauseController;
@@ -24,7 +24,7 @@ public class PlayerScript : Character
     protected float raycastMaxDistance;
     // Runtime components
     private Inventory inventory; 
-    // Status variables for item and platform effect, and item repeated collision
+    // Status variables for item and platform effect, extended jump, and item repeated collision
     public bool isShelled, onIce, isCollidable = true;
     private float currentJumpTimer; 
     
@@ -41,29 +41,29 @@ public class PlayerScript : Character
 
     private void Update()
     {      
-        //Ignoring all input and movement if game is paused
+        // Ignoring all input and movement if game is paused
         if(!pauseController.gamePaused) {
-            //Checking if player is on spawn movement (blocks input)
+            // Checking if player is on spawn movement (blocks input)
             if(!isSpawning){            
-                //Checking ground each frame for tile effects
+                // Checking ground each frame for tile effects
                 SetGroundRaycast();
                 CheckGround();
-                //Catching inputs only if player is alive
-                if(!isDead){
-                    //Spacebar pressed input to start extended jump
+                // Catching inputs only if player is alive
+                if(!isDefeated){
+                    // Spacebar pressed input to start extended jump
                     if(Input.GetKey("space")) {
                         Jump();
                     } 
-                    //Spacebar UP input to stop extended jump
+                    // Spacebar UP input to stop extended jump
                     if (Input.GetKeyUp("space")) {
                         isJumping = false;
                     }
-                    //Walking mechanics: velocity and sprite flipping
+                    // Walking mechanics: velocity and sprite flipping
                     float horizontalInput = Input.GetAxis("Horizontal");
                     SetInputVelocity(horizontalInput);
                     FlipHorizontal(horizontalInput);
                 }
-                //Variable gravity mechanics for more "natural" jump (less "floaty")
+                // Variable gravity mechanics for more "natural" jump (less "floaty")
                 if(body.velocity.y < 0) {
                     body.gravityScale = downwardGravity;
                     isFalling = true;
@@ -71,25 +71,25 @@ public class PlayerScript : Character
                     body.gravityScale = upwardGravity;
                     isFalling = false;
                 }
-            //Player spawning movement (linear displacement along with spawn platform)
+            // Augmented gravity on spawn so player sticks to platform without lagging behind
             } else {
                 body.gravityScale = spawnGravity;
             }
-            //Setting animation parameters after all movement has been resolved
+            // Setting animation parameters after all movement has been resolved
             bool isWalking = (body.velocity.x > 1.0f || body.velocity.x < -1.0f) && isGrounded;
             animator.SetBool("isWalking", isWalking);
             animator.SetBool("isFalling", isFalling && !isGrounded);
-            animator.SetBool("isDead",isDead);
+            animator.SetBool("isDefeated",isDefeated);
         }  
     }
 
     protected void SetInputVelocity(float horizontalInput)
     {
-        //Detecting movement after spawning to hide platform
+        // Detecting movement after spawning to hide platform
         if(horizontalInput != 0 && !isSpawned) {
             spawnPlatform.DoHide();
         }
-        //Moving if not airborne and not on iced platform
+        // Moving if not airborne and not on iced platform
         if(!onIce) {
             body.velocity = new Vector2(horizontalInput * adjustedWalkSpeed, body.velocity.y);
         } 
@@ -97,12 +97,11 @@ public class PlayerScript : Character
 
     protected void FlipHorizontal(float horizontalInput)
     {
-        //Flipping player sprite when walking. Using 0.01 for input tolerance
+        // Flipping player sprite when walking. Using 0.01 for input tolerance
         if((horizontalInput > 0.01f && !flippedHorizontal) || (horizontalInput < -0.01f && flippedHorizontal)){
               transform.localScale *= new Vector2(-1,1);
             flippedHorizontal = !flippedHorizontal;
         }
-
         // Flipping item if any on inventory
         if(inventory.currentItem != null && !inventory.currentItem.onUse) {
             if((!flippedHorizontal && !inventory.currentItem.flippedHorizontal) || (flippedHorizontal && inventory.currentItem.flippedHorizontal)) {
@@ -114,15 +113,15 @@ public class PlayerScript : Character
 
     protected override void Jump()
     {
-        //Initial jump with sound and extended jump setup
+        // Initial jump with sound and extended jump setup
         if( isGrounded && !isJumping ) {
             //masterController.soundController.PlaySound(jumpSound, 0.15f);
             currentJumpTimer = maxJumpTime;
             base.Jump();
             animator.SetTrigger("doJump");
-        //Extended jump if space key is still pressed
+        // Extended jump if space key is still pressed
         }else if(isJumping){
-            //Consuming extended jump time and setting jump variable to false if jump time ran out
+            // Consuming extended jump time and setting jump variable to false if jump time ran out
             if( currentJumpTimer > 0 ) {
                 body.velocity = Vector2.up * adjustedJumpSpeed * (1.2f + currentJumpTimer);
                 currentJumpTimer -= Time.deltaTime;
@@ -132,7 +131,7 @@ public class PlayerScript : Character
         }
 
         animator.SetBool("isGrounded", isGrounded);
-
+        // Hiding spawn platform on jump while spawning
         if(!isSpawned){
             spawnPlatform.DoHide();
         }
@@ -143,6 +142,7 @@ public class PlayerScript : Character
         base.OnCollisionEnter2D(collision);
         // Checking for Enemy collision
         if(collision.gameObject.tag == "Enemies" && isCollidable) {
+            // Collision gap to avoid repeat collisions too fast
             isCollidable = false;
             StartCoroutine(ResetCollisionCoroutine());
             Enemy collidingEnemy = collision.gameObject.GetComponent<Enemy>();
@@ -150,10 +150,11 @@ public class PlayerScript : Character
             // If enemy is flipped, it can be kicked
             if(collidingEnemy.flippedVertical) {
                 KickEnemy(collidingEnemy);
-            // If enemy is NOT flipped, check for protection item before resolving dead
-            }else if(!collidingEnemy.isDead) {
+            // If enemy is NOT flipped, check for protection item before resolving defeat
+            }else if(!collidingEnemy.isDefeated) {
                 CheckForShell();
             }
+        // Waves and boss contact is instant defeat
         } else if ( collision.gameObject.tag == "Waves" || collision.gameObject.tag == "Bosses" ) {
            CheckForShell(); 
         }
@@ -174,6 +175,7 @@ public class PlayerScript : Character
 
     public void KickEnemy(Enemy collidingEnemy)
     {
+        // Defeating kicked enemy
         collidingEnemy.TriggerDefeat(body);
         // Playing animation from code to allow for interruption of other animations
         animator.Play("patti_kick");
@@ -192,8 +194,8 @@ public class PlayerScript : Character
 
     public void TriggerDefeat()
     {   
-        // Marking dead status and doing animation
-        isDead = true;
+        // Marking defeat status and marking animation
+        isDefeated = true;
         animator.SetTrigger("died");
         inventory.LoseItem();
         Hold();
@@ -227,7 +229,7 @@ public class PlayerScript : Character
         // Resetting player state
         isSpawning = true;
         isSpawned = false;
-        isDead = false;
+        isDefeated = false;
         isFalling = false;
         isGrounded = true;
         transform.position = initialPosition;
@@ -239,25 +241,25 @@ public class PlayerScript : Character
 
     public void FinishSpawn()
     {
-        // Setting player to its regular layer
+        // Setting player to its regular layer after spawning, and allowing for movement
         isSpawned = true;
         int defaultLayer = LayerMask.NameToLayer("Default");  
         SetLayer(defaultLayer);
     }
-    //Setting Raycast for ground detection. It points downwards, starting at a distance from front or back and extending a bit outside bottom of sprite
+    // Setting Raycast for ground detection. It points downwards, starting at a distance from front or back and extending a bit outside bottom of sprite
     protected void SetGroundRaycast()
     {
         raycastOrigin = transform.position;
         raycastDirection = transform.TransformDirection(Vector2.down);
         raycastMaxDistance = 2 * charCollider.bounds.extents.y;
     }
-    //Checking which tile type is below player each frame
+    // Checking which tile type is below player each frame
     private void CheckGround()
     {
-        //Raycast for platforms only
+        // Raycast for platforms only
         groundHit = Physics2D.Raycast(raycastOrigin, raycastDirection, raycastMaxDistance, LayerMask.GetMask("Platforms"));
         //Debug.DrawRay(raycastOrigin, raycastDirection * raycastMaxDistance, Color.red );
-        //If tile is underneath, get speed modifier from tile and set movement vars
+        // If tile is underneath, get speed modifier from tile and set movement vars
         if(groundHit){
             walkSpeedMod = tileController.GetTileSpeedMod(groundHit.point);
 
@@ -267,6 +269,7 @@ public class PlayerScript : Character
                 walkSpeedMod = 1.0f;
                 onIce = true;
             }
+        // If not, airborne X velocity is reduced
         } else {
             walkSpeedMod = 0.65f;
         }       
@@ -276,12 +279,12 @@ public class PlayerScript : Character
 
     public override void TriggerOffScreen()
     {
-        //if player left the screen marked as dead, complete death cycle
-        if(isDead) {
-            masterController.PlayerDied();
+        // If player left the screen marked as defeated, complete defeat cycle
+        if(isDefeated) {
+            masterController.PlayerDefeated();
             spawnPlatform.gameObject.SetActive(true);
             Spawn();
-        //if alive, not spawning or not in scrollPhase; swap with ghost
+        // If alive, not spawning or not in scrollPhase; swap with ghost
         } else if(!isSpawning && !masterController.scrollPhase) {
             screenWrap.GhostSwap();
         }

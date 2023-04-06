@@ -8,14 +8,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour, IPointerEnterHandler
 {
-    //This controller is in charge of all Main Menu interactions like moving-through and selecting options
+    // Controller is in charge of all Main Menu interactions like moving-through and selecting options
 
-    //Object and script references for UI and others
+    // Object and script references for UI and others
     [SerializeField] private Button[] availableButtons;
     //[SerializeField] private SoundController soundController;
+    //[SerializeField] private AudioClip optionChangeSound, optionSelectSound;
     [SerializeField] private MasterController masterController;
-    [SerializeField] private AudioClip optionChangeSound;
-    [SerializeField] private AudioClip optionSelectSound;
 
     //References for current active Button, its Text for highlighting and its index in the button array for wrap-around
     private Button activeButton;
@@ -24,13 +23,13 @@ public class MainMenuController : MonoBehaviour, IPointerEnterHandler
 
     private void Awake()
     {
-        //Setting "PLAY" button highlighted by default
+        // Setting "PLAY" button highlighted by default
         SetActiveButton();
     }
 
     private void Update()
     {
-        //Key-input menu selection movement, with edge wrap-around
+        // Key-input menu selection movement, with edge wrap-around
         if(Input.GetKeyDown("up")) {
             if(selectedIndex > 0){
                 selectedIndex -= 1;
@@ -44,17 +43,17 @@ public class MainMenuController : MonoBehaviour, IPointerEnterHandler
                 selectedIndex = 0;
             }
         }
-        //Playing SFX and change active button on move
+        // Playing SFX and change active button on move
         if(Input.GetKeyDown("up") || Input.GetKeyDown("down")) {
             SetActiveButton();
         }
-        //Return key selects current option
+        // Return key selects current option
         if(Input.GetKeyDown("return")) {
             activeButton.onClick.Invoke();
             //soundController.PlaySound(optionSelectSound, 0.2f);
         }
     }
-    //Sets current active button on selection change
+    // Sets current active button on selection change
     private void SetActiveButton()
     {
         activeButton = availableButtons[selectedIndex];
@@ -67,9 +66,9 @@ public class MainMenuController : MonoBehaviour, IPointerEnterHandler
                 buttonText.color = Color.grey;
             }
         }
-        //soundController.PlaySound(optionChangeSound, 0.2f);
+        // soundController.PlaySound(optionChangeSound, 0.2f);
     }
-    //Functions for event callbacks from UI
+    // Functions for event callbacks from UI
     public void PlayGame()
     {
         masterController.StartGame();

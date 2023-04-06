@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class ToughEnemy : Enemy
 {
-    // Enemies that change state on first hit and only get flipped on second hit
+    // Enemies that change state on first hit and only get flipped or defeated on second hit
 
-    // Adjustable variables: time to change, time it remains altered, marking if explodes and waves for exploding ones
+    // Editor vars: time to change, time it remains altered, marking if explodes and waves for exploding ones
     [SerializeField] protected float changeTime, madTime;
     [SerializeField] protected bool explodes;
     [SerializeField] private GameObject wavePrefab;
-    // Control variables for change and state behaviors
+    // Runtime vars for change and state behaviors
     protected bool doChange, isChanging, isMad, doExplode;
     protected float changeCount;
 
@@ -27,7 +27,7 @@ public class ToughEnemy : Enemy
 
     protected override void Update()
     {
-        // Overriding update to trigger state change mid-air after hit when falling
+        // Overriding update to trigger state change mid-air after hit when falling after flip jump
         if(doChange && body.velocity.y < -0.05){
             doChange = false;
             isChanging = true;
@@ -96,7 +96,7 @@ public class ToughEnemy : Enemy
         // Disappear after spawning waves
         Vanish();
     }
-
+    // Adjusts collider for enemies that change sprite when changing state
     protected void AdjustCollider()
     {
         Vector3 newSize = new Vector3 ( mainRenderer.bounds.size.x / Math.Abs(transform.localScale.x),
@@ -139,7 +139,7 @@ public class ToughEnemy : Enemy
     {
         yield return new WaitForSeconds(madTime);
         // Only resetting state if enemy hasnt been hit again or beaten
-        if(!flippedVertical && !isDead){
+        if(!flippedVertical && !isDefeated){
             // If not exploding enemy, unset mad state
             if(!explodes){
                 isMad = false;
@@ -148,7 +148,7 @@ public class ToughEnemy : Enemy
             }else{
                 Hold();
                 doExplode = true;
-                isDead = true;
+                isDefeated = true;
             }
         }
     }

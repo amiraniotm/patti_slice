@@ -5,13 +5,16 @@ using UnityEngine;
 public class ClumsyEnemy : Enemy
 {
     // Clumsy enemies are fast, but will auto-flip after a certain amount of time
-    [SerializeField] private float tripCount, tripTime ;
+
+    // Variables for trip control
+    [SerializeField] private float tripTime;
+    private float tripCount;
     
     protected override void Update()
     {
         // Counting time to trip
         if(!isSpawning && !isTripped && !flippedVertical) {
-            tripCount += 1 * Time.deltaTime;
+            tripCount += Time.deltaTime;
         }
         // Counter runs out, mark for trip
         if(tripCount >= tripTime) {

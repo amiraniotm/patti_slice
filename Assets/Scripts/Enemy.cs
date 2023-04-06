@@ -34,7 +34,7 @@ public class Enemy : Character
         // Resetting control variables
         isSpawning = true;
         charCollider.enabled = true;
-        isDead = false;
+        isDefeated = false;
         flippedVertical = false;
         onTop = true;
         onBot = false;
@@ -66,12 +66,12 @@ public class Enemy : Character
             } else {
                 body.gravityScale = upwardGravity;
             }
-        } else if (isDead) {
-            // Increading gravity drastically for enemy to leave screen fast when dead
+        } else if (isDefeated) {
+            // Increading gravity drastically for enemy to leave screen fast when defeated
             body.gravityScale = spawnGravity;
         }
         // Checking movement conditions to call move functions for ground-based enemies
-        if(!flippedVertical && !isDead){
+        if(!flippedVertical && !isDefeated){
             if((((!canHover && (isGrounded || isFalling))) || hoverForward) || isSpawning) {
                 Walk();
             }
@@ -88,8 +88,8 @@ public class Enemy : Character
     
     public override void TriggerOffScreen()
     {
-        //if enemy left the screen marked as dead, complete death cycle
-        if(isDead) {
+        //if enemy left the screen marked as defeated, complete defeat cycle
+        if(isDefeated) {
             Vanish();
         //if alive and NOT on bot platform, wraparound screen. If on bot, respawn
         } else if(!isSpawning) {
@@ -161,7 +161,7 @@ public class Enemy : Character
     // Alters enemy position for shake effect if enemy has not been killed
     protected void Shake()
 	{
-        if(!isDead) {
+        if(!isDefeated) {
             if( transform.position.x >= initialShakePosition.x ){
                 transform.position = new Vector2(initialShakePosition.x - shakeMagnitude, initialShakePosition.y);
             }else if( transform.position.x < initialShakePosition.x ){
@@ -193,12 +193,12 @@ public class Enemy : Character
             StopShaking();
         }
         // Disabling collider so enemy falls off screen
-        isDead = true;
+        isDefeated = true;
         charCollider.enabled = false;
         // Setting velocity equal to player's so it follows kick direction
         body.velocity = new Vector2(playerBody.velocity.x * 2, playerBody.velocity.y);
     }
-    // Removes enemy when it leaves the screen while dead
+    // Removes enemy when it leaves the screen while defeated
     protected void Vanish()
     {
         gameObject.SetActive(false);
@@ -218,7 +218,7 @@ public class Enemy : Character
         
         yield return new WaitForSeconds(shakeStart);
 
-        if(!isShaking && !isDead && flippedVertical){
+        if(!isShaking && !isDefeated && flippedVertical){
             StartShaking();
             isShaking = true;
         }
@@ -229,7 +229,7 @@ public class Enemy : Character
     {
         yield return new WaitForSeconds(unflipTime);
 
-        if(flippedVertical && !isDead){
+        if(flippedVertical && !isDefeated){
             Jump();
             Unflip();
         }

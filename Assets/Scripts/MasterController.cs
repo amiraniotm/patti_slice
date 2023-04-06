@@ -5,35 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class MasterController : MonoBehaviour
 {
-    //MasterController is the overall game controller, and as such it is a Singleton.
-    //It controls scene, screen and sound transition and primary indicators such as score, time, etc; and associated events like game start or game over
+    // MasterController is the overall game controller. It controls scene, screen and sound transition and
+    // primary indicators such as score, time, etc; and associated events like game start or game over
 
-    //References for Title Scene objects
+    // Editor vars for Title Scene objects
     //[SerializeField] public SoundController soundController;
     [SerializeField] private GameObject instructionsPanel, menuPanel;
-    [SerializeField] private AudioClip convertTimeSound;
     [SerializeField] private CameraMovement mainCamera;
-    
-    //References for Game Scene objects
+    // Editor vars for Game Scene objects
     [SerializeField] private Level[] availableLevels; 
-    //[SerializeField] public List<Sprite> bgList = new List<Sprite>();
-    //Serializing transition times and lives for easy test config
+    // Serializing transition times and lives for easy test config
     [SerializeField] public int levelChangeDuration, phaseChangeDuration, livesCount;
     [SerializeField] public float timeCount;
-    
-    //References for Game runtime objects
+    // References for Game runtime objects
     public PauseController pauseController;
-    //private PlayerScript player;
     public Level currentLevel;
     public LevelDisplay levelDisplay;
     public EnemyCounter enemyCounter;
     public ItemController itemController;
-    //public GameObject entryPoint, backgroundObject, playerObject, MDCObject;
+    //public GameObject entryPoint, backgroundObject, MDCObject;
     //public TileController tileController;
-    //public SpriteRenderer backgroundRenderer;
     //private MapDisplacementController mapDisController;
-
-    //In-game tracking variables
+    // In-game tracking variables
     public bool changingLevel, levelStarted, gameOver, timeUp, startingScroll, scrollPhase, bossPhase;
     public int currentLevelKey, currentPhaseKey, pointsCount;    
     private float phaseChangeTimer;
@@ -45,17 +38,16 @@ public class MasterController : MonoBehaviour
 
     private void Update()
     {
-        //Checking for "escape" key press to close the Instructions screen if open
+        // Checking for "escape" key press to close the Instructions screen if open
         if(Input.GetKeyDown("escape") && SceneManager.GetActiveScene().name == "Title") {
             if(instructionsPanel.activeSelf) {
                 HideInstructionsPanel();
             } 
         }
-        
-        //Starting and updating timer if within a level, not paused and not within scroll phase
+        // Starting and updating timer if within a level, not paused and not within scroll phase
         if(levelStarted && !gameOver && pauseController != null && !pauseController.gamePaused && !scrollPhase) {
             timeCount -= Time.deltaTime;
-            //Game Over by time up
+            // Game Over by time up
             if(timeCount <= 0 && !timeUp) {
                 timeCount = 0;
                 timeUp = true;
@@ -66,21 +58,18 @@ public class MasterController : MonoBehaviour
             }
         } 
     }
-
-    //Show the instructions screen and hide title screen elements when "instructions" button pressed
+    // Show the instructions screen and hide title screen elements when "instructions" button pressed
     public void ShowInstructionsPanel()
     {
         menuPanel.SetActive(false);
         instructionsPanel.SetActive(true);
     }
-
-    //Show the Title screen and hide instructions screen
+    // Show the Title screen and hide instructions screen
     public void HideInstructionsPanel()
     {
         menuPanel.SetActive(true);
         instructionsPanel.SetActive(false);
     }
-
     // Setting references to in-game objects only when the objects are created 
     public void SetLevelDisplay(LevelDisplay LDRef)
     {     
@@ -117,26 +106,25 @@ public class MasterController : MonoBehaviour
     //     }
     // }
 
-    //Sets up for the game and makes scene transition
+    // Sets up for the game and makes scene transition
     public void StartGame()
     {
         Time.timeScale = 0;
         levelStarted = false;
         changingLevel = true;
-        //Restarting Level and Phase keys
+        // Restarting Level and Phase keys
         currentLevelKey = 0;
         currentPhaseKey = 1;
-        //Stopping menu music and starting game music
+        // Stopping menu music and starting game music
         // soundController.StopMusic();
         // soundController.SetCurrentMusicClip();
         // soundController.PlayMusic();
-        //Setting Level and Level parameters and enemies
+        // Setting Level and Level parameters and enemies
         currentLevel = availableLevels[currentLevelKey];
         timeCount = currentLevel.levelTime;
         currentLevel.SetInitialEnemies();
         //entryPoint = null;
         // if(currentLevelKey > 1) {    
-        //     backgroundRenderer.sprite = bgList[currentLevelKey - 1];
         //     tileController.SetLevelTiles(currentLevelKey - 1);
         //     player.PlayerSpawn();
         //     enemyCounter.Start();
@@ -144,14 +132,13 @@ public class MasterController : MonoBehaviour
         //     itemController.StartItems(5.0f);
         // } else {
         // }
-
-        //Loading game scene and setting scene objects that MasterController needs
+        //Loading game scene and starting phase after initial display delay
         SceneManager.LoadScene("Game");
         StartCoroutine(NextPhaseCoroutine("enemy"));
         //StartCoroutine(SetLevelObjectsCoroutine());
     }
 
-    //Adds given points to score under certain circumstances like defeating an enemy 
+    // Adds given points to score after defeating an enemy 
     public void AddPoints(int points)
     {
         pointsCount += points;
@@ -177,9 +164,8 @@ public class MasterController : MonoBehaviour
             }
         }
     }
-
-    //Removing lives when player dies and checking for Game Over by lives ran out
-    public void PlayerDied()
+    //Removing lives when player is defeated and checking for Game Over by lives ran out
+    public void PlayerDefeated()
     {
         livesCount -= 1;
         
@@ -191,15 +177,13 @@ public class MasterController : MonoBehaviour
             //soundController.StopMusic();
         }
     }
-
-    //Restart game variables after a Game Over screen
+    // Restart game variables after a Game Over screen
     public void ResetGame()
     {
         currentLevelKey = 0;
         //Hiding game over screen
         levelDisplay.ToggleGameOverScreen();
         //Destroying elements that are preserved through scenes so they aren't repeated
-        //Didnt implement singleton since script is not called 
         //Destroy(soundController.gameObject);
         Destroy(mainCamera.gameObject);
         //Restarting time and loading title scene
@@ -207,35 +191,32 @@ public class MasterController : MonoBehaviour
         SceneManager.LoadScene("Title");
         Destroy(gameObject);
     }
-
     //Finishing the map scrolling phase and starting an Enemy phase
     public void EndScrollPhase()
     {
         scrollPhase = false;
-        //Stopping scroll mechanics
+        // Stopping scroll mechanics
         //mapDisController.EndDisplacement();
         //levelDisplay.timePanel.SetActive(true);
-        //Adding extra bonus time per phase
+        // Adding extra bonus time per phase
         timeCount += currentLevel.extraPhaseTime;
-        //Setting boss battle if next Enemy phase is the last phase of the level
+        // Setting boss battle if next Enemy phase is the last phase of the level
         if(currentPhaseKey == currentLevel.levelPhases) {
             bossPhase = true;
             //enemyCounter.SpawnBoss();
             //itemController.SetItemsForBoss(currentLevelKey);
-        //Setting normal Enemy phase if not
-        } else {
-            //Restarting enemies and clearing items
+        // Setting normal Enemy phase if not
+        } 
+        //else {
+            // Restarting enemies and clearing items
             //enemyCounter.Start();
             //itemController.FlushItems();
-        }
-        //Restarting item spawn
-       // itemController.StartItems(5.0f);
+        //}
+        // Restarting item spawn
+        //itemController.StartItems(5.0f);
         //Stopping time and setting coroutine for level-phase info display
         StartCoroutine(NextPhaseCoroutine("enemy"));
     }
-
-    //COROUTINES
-
     //Setting in-game object references. Using a coroutine to wait for objects to become available after scene change
     // private IEnumerator SetLevelObjectsCoroutine()
     // {
@@ -249,7 +230,6 @@ public class MasterController : MonoBehaviour
     //         yield return 0;
     //     }
     //     //After object references are set, get Script component references
-    //     //backgroundRenderer = backgroundObject.GetComponent<SpriteRenderer>();
     //     //player = playerObject.GetComponent<PlayerMovement>();
     //     //mapDisController = MDCObject.GetComponent<MapDisplacementController>();
     //     //DOES THIS GO HERE???

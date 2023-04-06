@@ -9,7 +9,7 @@ public class ElementWave : MonoBehaviour
 
     // Type of debuff tile set
     [SerializeField] private TileBase elementTile;
-    // Adjustable variables
+    // Adjustable variables for how fast and how long waves are active
     [SerializeField] private float moveSpeed, activeTime;
     // References to objects: tile manager to set tiles, edgechecker and screenwrap to check if wave still active
     private TileController tileController;
@@ -26,7 +26,7 @@ public class ElementWave : MonoBehaviour
     private void Start()
     {
         // Setting movement direction
-        ShiftDirection();
+        FlipHorizontal();
         // Immediately starting self-disappear coroutine
         StartCoroutine(QuenchCoroutine());
     }
@@ -46,12 +46,12 @@ public class ElementWave : MonoBehaviour
         if(!frontEdgeHit){
             Quench();
         }  
-        // Moving if still active
+        // Moving when active
         float newXpos = transform.position.x + (moveSpeed * Time.deltaTime);
         transform.position = new Vector2(newXpos, transform.position.y);
     }
 
-    private void ShiftDirection()
+    private void FlipHorizontal()
     {
         // Swaps speed if moving to left
         if(edgeChecker.direction == "left") {
@@ -59,13 +59,12 @@ public class ElementWave : MonoBehaviour
             transform.localScale *= new Vector2(-1,1);
         }
     }
-
+    // Waves self destruct
     protected void Quench()
     {
-        // Renews tile list so new debuff tiles are taken into account, and self-destroys
         Destroy(gameObject);
     }
-    // Autovanishing after active time elapsed
+    // Auto-quenching after active time elapsed
     protected IEnumerator QuenchCoroutine()
     {
         yield return new WaitForSeconds(activeTime);

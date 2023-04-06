@@ -28,7 +28,7 @@ public class PlatformCollision : HittableBlock
             FlipTiles(collision);
         }
     }
-
+    // Flip is controlled by a collider above player collision point. If enemy collides, it will be flipped. The collider disappears quickly
     private void FlipTiles(Collision2D collision)
     {
         tileController.SetFlipCollider(collision);      

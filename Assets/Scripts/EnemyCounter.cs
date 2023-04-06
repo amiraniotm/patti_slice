@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyCounter : MonoBehaviour
 {
-    // Controls boss and enemy spawn, and also keeps count for events like game over, stage clear, etc
+    // Controls boss and enemy spawn, and also keeps enemy count for events like game over, stage clear, etc
 
-    // References to spawn points and bosses available
+    // References to spawn points, bosses available, and how often enemies are spawned
     [SerializeField] public SpawnPoint[] spawnPoints;
     [SerializeField] public GameObject[] availableBosses; 
     [SerializeField] private float spawnInterval;
@@ -30,7 +30,7 @@ public class EnemyCounter : MonoBehaviour
         // Setting level and phase
         currentLevel = masterController.currentLevel;
         currentPhase = masterController.currentPhaseKey - 1;
-        // Getting level enemies and assigning total count
+        // Getting level enemies and assigning total count and queue
         foreach(KeyValuePair<string,int> newEnemy in currentLevel.levelEnemies[currentPhase]) {
             for (int i = 0; i < newEnemy.Value; i++)
             {
@@ -49,15 +49,15 @@ public class EnemyCounter : MonoBehaviour
             if(!spawnPoint.readyToSpawn){
                 spawnPoint.readyToSpawn = !spawnPoint.readyToSpawn;
             }else{
+                // Spawning enemy at top of queue if any on queue
                 if(spawnQ.Count > 0) {
-                    // Spawning enemy at top of queue
                     spawnPoint.SpawnEnemy(spawnQ[0]);
                     spawnQ.RemoveAt(0);
                 }
             }
         }
     }
-    // Called every time a dead enemy leaves the screen
+    // Called every time a defeated enemy leaves the screen
     public void EnemyDied(Enemy deadEnemy)
     {
         totalEnemies -= 1;
@@ -65,11 +65,11 @@ public class EnemyCounter : MonoBehaviour
         masterController.AddPoints(deadEnemy.bounty);
         masterController.CheckEnemies();
     }
-    // Called when a FlibBox is hit
+    // Called when a FlipBox is hit
     public void FlipAll()
     {
         foreach(Enemy enemy in currentEnemies) {
-            if(enemy.isGrounded && !enemy.isDead) {
+            if(enemy.isGrounded && !enemy.isDefeated) {
                 enemy.FlipVertical();
             }
         }

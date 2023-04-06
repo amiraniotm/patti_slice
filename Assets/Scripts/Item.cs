@@ -36,7 +36,7 @@ public abstract class Item : MonoBehaviour
         wasTaken = false;
     }
 
-    // Automatically disabling item if player didnt get it
+    // Automatically disabling item if player didnt took it
     public virtual void StartVanishCoroutine()
     {
         StartCoroutine(VanishCoroutine());

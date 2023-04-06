@@ -1020,8 +1020,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ghostPrefab: {fileID: 2052379586512237674, guid: 04fd3ff61b57808f4926de3e51b7478d, type: 3}
   isCharacter: 1
-  autoLeave: 0
-  selfDestruct: 0
+  doesLeave: 0
+  doesDestroy: 0
   isVisible: 0
   screenWidth: 0
   screenHeight: 0
@@ -1044,7 +1044,7 @@ MonoBehaviour:
   spawnGravity: 50
   charCollider: {fileID: 0}
   body: {fileID: 0}
-  isDead: 0
+  isDefeated: 0
   hasGhosts: 0
   isGrounded: 0
   isSpawning: 1
@@ -1257,7 +1257,7 @@ GameObject:
   - component: {fileID: 573719923}
   m_Layer: 6
   m_Name: SpawnPlat
-  m_TagString: Untagged
+  m_TagString: Platforms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9172,12 +9172,6 @@ MonoBehaviour:
   platformMask:
     serializedVersion: 2
     m_Bits: 256
-  itemNames:
-  - ExtraLife
-  - ExtraTime
-  - AttackPincer
-  - BoomerangPincer
-  - HardShell
   itemPool: {fileID: 1200411481}
   spawnTime: 6
   weightAdjust: 1.25

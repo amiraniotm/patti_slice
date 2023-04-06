@@ -6,7 +6,7 @@ public class EdgeChecker : MonoBehaviour
 {
     // Script to detect platform edges 
 
-    // Adjustables: how far is raycast and how deep it goes
+    // Editor vars: how far is raycast and how deep it goes
     [SerializeField] private float raycastXGap, raycastYMod;
     // Raycast parameters, set according to sprite size at runtime
     public Vector2 frontRaycastOrigin, backRaycastOrigin, raycastDirection;
@@ -15,7 +15,7 @@ public class EdgeChecker : MonoBehaviour
     protected Renderer mainRenderer;
     // Platform layer to condition hit to only this layer
     private int platformLayer;
-    // Direction to establish which way is front and back
+    // Direction to establish which way is right (front of sprite) and left (back of sprite)
     public string direction = "right";
 
     private void Awake()
@@ -35,7 +35,7 @@ public class EdgeChecker : MonoBehaviour
     protected void SetEdgeRaycast()
     {
         float size = mainRenderer.bounds.size.x;
-        // Setting front and back coordinates according to move direction
+        // Setting front and back coordinates according to movement direction
         if(direction == "left"){
             frontFace = mainRenderer.bounds.min.x - raycastXGap;
             backFace = mainRenderer.bounds.max.x + raycastXGap;
@@ -43,7 +43,8 @@ public class EdgeChecker : MonoBehaviour
             frontFace = mainRenderer.bounds.max.x + raycastXGap;
             backFace = mainRenderer.bounds.min.x - raycastXGap;
         }
-        // Setting raycast: it goes from Y center of sprite, at the calculated X distance for front and back; downwards and extends according to sprite size
+        // Setting raycast: it goes downward from Y center of sprite and at the calculated X distance for front and back; 
+        // and extends according to sprite size
         frontRaycastOrigin = new Vector2(frontFace, mainRenderer.bounds.center.y);
         backRaycastOrigin = new Vector2(backFace, mainRenderer.bounds.center.y);
         raycastDirection = transform.TransformDirection(Vector2.down);
