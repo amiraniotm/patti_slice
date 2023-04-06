@@ -9179,7 +9179,8 @@ MonoBehaviour:
   - BoomerangPincer
   - HardShell
   itemPool: {fileID: 1200411481}
-  spawnTime: 5
+  spawnTime: 6
+  weightAdjust: 1.25
   itemLimit: 5
   currentItem: {fileID: 0}
   currentItemScript: {fileID: 0}

@@ -33,7 +33,7 @@ public abstract class UsableItem : Item
     protected override void OnTriggerEnter2D(Collider2D otherCollider)
     {
         // If player collides with item and it hasnt been taken, take it
-        if(otherCollider.gameObject.tag == "Player" && !wasTaken) {
+        if(otherCollider.gameObject.tag == "Player" && !wasTaken && !onUse) {
             //itemController.ItemGot();
             // Clear any item on inventory
             playerInventory.LoseItem();
@@ -72,7 +72,6 @@ public abstract class UsableItem : Item
     {
         base.Vanish();
 
-        wasTaken = false;
         onUse = false;
         usesLeft = maxUses;
         itemCollider.enabled = true;

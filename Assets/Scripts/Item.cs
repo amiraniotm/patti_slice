@@ -29,6 +29,8 @@ public abstract class Item : MonoBehaviour
     // Disabling item at end of life cycle, and returning it to untouched state
     public virtual void Vanish()
     {
+        // Restablishes count if item wasnt taken by player
+        itemController.CheckItemRestablish(wasTaken);
         StopAllCoroutines();
         gameObject.SetActive(false);
         wasTaken = false;

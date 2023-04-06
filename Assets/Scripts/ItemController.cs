@@ -15,13 +15,13 @@ public class ItemController : MonoBehaviour
     //[SerializeField] private Inventory playerInventory;
     //[SerializeField] private AudioClip itemGotSound, enemyCollisionSound, itemAppearSound;
     [SerializeField] private ObjectPool itemPool;
-    [SerializeField] private float spawnTime;
+    [SerializeField] private float spawnTime, weightAdjust;
     [SerializeField] private int itemLimit = 5;
     // Inner references
     private BoxCollider2D itemZone;
     private MasterController masterController;
     // Weighted chance control
-    private Dictionary<string,int> itemWeights = new Dictionary<string, int>();
+    private Dictionary<string,float> itemWeights = new Dictionary<string, float>();
     //private Dictionary<string,int> originalWeights = new Dictionary<string, int>();
     // control variables for item on-screen
     //private float originalSpawnTime;
@@ -67,10 +67,10 @@ public class ItemController : MonoBehaviour
     public int GetWeightedRandomItem()
     {    
         // Creating an array with the item weigths
-        int[] weights = new int[itemWeights.Count];
+        float[] weights = new float[itemWeights.Count];
         itemWeights.Values.CopyTo(weights, 0);
         // Randomly generate a counterweight to compare item weights
-        int randomWeight = UnityEngine.Random.Range(0, weights.Sum());
+        float randomWeight = UnityEngine.Random.Range(0, weights.Sum());
         // Loops stops whenever counterweight runs out
         while( randomWeight >= 0) {
             // Iterating items and decreasing counterweight by item weight value
@@ -94,6 +94,14 @@ public class ItemController : MonoBehaviour
         //spawnTime = originalSpawnTime;
         ///itemWeights = originalWeights;
         itemLimit = 5;
+    }
+    // Fairer item limit: returns item counter if player didnt pick item
+    public void CheckItemRestablish(bool itemWasTaken)
+    {
+        if(!itemWasTaken) {
+            itemLimit += 1;
+            Debug.Log("This one returns! Remaining " + itemLimit);
+        }
     }
 
     // public void ItemGot()
@@ -134,7 +142,10 @@ public class ItemController : MonoBehaviour
             bool isColliding = Physics.CheckSphere(newItemPos, 1f, platformMask, QueryTriggerInteraction.Collide);
             // If spawn coordinates are within bounds and not colliding with platform, spawn item
             if(itemZone.bounds.Contains(newItemPos) && !isColliding) {
-                currentItem = itemPool.GetPooledObject(itemNames[itemIndex]);
+                string itemToPlace =  itemNames[itemIndex];
+                currentItem = itemPool.GetPooledObject(itemToPlace);
+                // Adjusting weight down every time an item is placed, to diminish repeated item probability
+                itemWeights[itemToPlace] /= weightAdjust;
 
                 if(currentItem != null) {
                     currentItem.SetActive(true);
@@ -144,6 +155,7 @@ public class ItemController : MonoBehaviour
                     //masterController.soundController.PlaySound(itemAppearSound, 0.3f);
                     itemSet = true;
                     itemLimit -= 1;
+                    Debug.Log("item set! Remaining " + itemLimit);
                 }
             } 
 

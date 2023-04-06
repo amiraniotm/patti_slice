@@ -12,6 +12,7 @@ public abstract class ConsumableItem : Item
     {
         if(otherCollider.gameObject.tag == "Player") {
             //itemController.ItemGot();
+            wasTaken = true;
             ApplyEffect();
             Vanish();
         } 

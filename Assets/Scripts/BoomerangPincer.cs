@@ -43,7 +43,7 @@ public class BoomerangPincer : UsableItem
     {
         base.OnTriggerEnter2D(otherCollider);
 
-        if(otherCollider.gameObject.tag == "Player" && onUse && comeBack) {
+        if(otherCollider.gameObject.tag == "Player" && onUse && (comeBack || onHold)) {
             FinishUse();
         }
     }
