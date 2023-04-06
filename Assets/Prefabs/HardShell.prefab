@@ -122,7 +122,7 @@ MonoBehaviour:
   itemName: HardShell
   vanishTime: 5
   maxUses: 1
-  useTime: 0.5
+  useTime: 0.15
   keyTriggered: 0
   flippedHorizontal: 0
   onUse: 0
