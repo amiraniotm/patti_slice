@@ -53,7 +53,7 @@ public class EdgeChecker : MonoBehaviour
     public RaycastHit2D CheckBack()
     {
         RaycastHit2D backEdgeHit = Physics2D.Raycast(backRaycastOrigin, raycastDirection, raycastMaxDistance, platformLayer);
-        Debug.DrawRay(backRaycastOrigin, raycastDirection * raycastMaxDistance, Color.red );
+        //Debug.DrawRay(backRaycastOrigin, raycastDirection * raycastMaxDistance, Color.red );
         
         return backEdgeHit;
     }
@@ -61,7 +61,7 @@ public class EdgeChecker : MonoBehaviour
     public RaycastHit2D CheckFront()
     {
         RaycastHit2D frontEdgeHit = Physics2D.Raycast(frontRaycastOrigin, raycastDirection, raycastMaxDistance, platformLayer);
-        Debug.DrawRay(frontRaycastOrigin, raycastDirection * raycastMaxDistance, Color.green ); 
+        //Debug.DrawRay(frontRaycastOrigin, raycastDirection * raycastMaxDistance, Color.green ); 
 
         return frontEdgeHit;
     }

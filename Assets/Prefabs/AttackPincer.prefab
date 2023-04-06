@@ -102,13 +102,12 @@ MonoBehaviour:
   itemName: AttackPincer
   vanishTime: 5
   maxUses: 3
-  useTime: 0.5
+  useTime: 0.15
   keyTriggered: 1
   flippedHorizontal: 0
   onUse: 0
   usesLeft: 0
   playerInventory: {fileID: 0}
-  originalScale: {x: 0, y: 0, z: 0}
 --- !u!95 &6661223274249892938
 Animator:
   serializedVersion: 5

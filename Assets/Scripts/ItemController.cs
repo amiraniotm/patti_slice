@@ -100,7 +100,6 @@ public class ItemController : MonoBehaviour
     {
         if(!itemWasTaken) {
             itemLimit += 1;
-            Debug.Log("This one returns! Remaining " + itemLimit);
         }
     }
 
@@ -155,7 +154,6 @@ public class ItemController : MonoBehaviour
                     //masterController.soundController.PlaySound(itemAppearSound, 0.3f);
                     itemSet = true;
                     itemLimit -= 1;
-                    Debug.Log("item set! Remaining " + itemLimit);
                 }
             } 
 

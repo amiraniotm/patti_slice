@@ -175,7 +175,8 @@ public class PlayerScript : Character
     public void KickEnemy(Enemy collidingEnemy)
     {
         collidingEnemy.TriggerDefeat(body);
-        animator.SetTrigger("kick");
+        // Playing animation from code to allow for interruption of other animations
+        animator.Play("patti_kick");
     }
 
     private void CheckForShell()
