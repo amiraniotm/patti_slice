@@ -38,8 +38,6 @@ public class AttackPincer : UsableItem
         transform.localScale /= 2.0f;
         itemCollider.enabled = false;
         CheckUses();
-        // Stopping all coroutines in case the use was interrupted from outside
-        StopAllCoroutines();
     }
 
     protected override IEnumerator UsageCoroutine()

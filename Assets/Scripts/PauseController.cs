@@ -26,12 +26,12 @@ public class PauseController : MonoBehaviour
         if(Input.GetKeyDown("return") && masterController.levelStarted && !masterController.gameOver) {
             if(!gamePaused) {
                 Time.timeScale = 0;
+                itemController.StopItems();
             } else {
                 itemController.StartItems(2.0f);
                 Time.timeScale = 1;
             }
 
-            itemController.StopItems();
             levelDisplay.TogglePausePanel();
             //masterController.soundController.TogglePauseMusic();
             gamePaused = !gamePaused;

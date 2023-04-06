@@ -40,7 +40,7 @@ public class ItemController : MonoBehaviour
         itemWeights.Add("ExtraTime", 80);
         itemWeights.Add("AttackPincer", 50);
         itemWeights.Add("BoomerangPincer", 40);
-        itemWeights.Add("HardShell", 50000);
+        itemWeights.Add("HardShell", 50);
 
         //originalSpawnTime = spawnTime;
         //originalWeights = itemWeights;
@@ -80,7 +80,6 @@ public class ItemController : MonoBehaviour
                 // If counterweight ran out, return the item index
                 if (randomWeight < 0)
                 {
-                    Debug.Log(weights[i]);
                     return i;
                 }
             }        

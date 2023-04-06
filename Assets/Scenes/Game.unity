@@ -843,7 +843,7 @@ MonoBehaviour:
   gameOverSign: {fileID: 670257686}
   youWonSign: {fileID: 1373222604}
   timePanel: {fileID: 1924298155}
-  resetDelay: 1
+  resetDelay: 0.5
 --- !u!1 &295300539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe0868b093840d4287715faa6022776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWalkSpeed: 12
+  maxWalkSpeed: 13
   maxJumpSpeed: 11
   upwardGravity: 5
   downwardGravity: 12
@@ -1057,8 +1057,10 @@ MonoBehaviour:
   pauseController: {fileID: 1123396302}
   jumpSound: {fileID: 8300000, guid: 6b45125e1fd90c8cd9bea04b9dbdd5f5, type: 3}
   maxJumpTime: 0.25
+  collGapTime: 0.3
   isShelled: 0
   onIce: 0
+  isCollidable: 1
 --- !u!95 &295300546
 Animator:
   serializedVersion: 5

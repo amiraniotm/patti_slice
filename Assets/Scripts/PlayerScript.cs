@@ -15,8 +15,8 @@ public class PlayerScript : Character
     // Sound references for SFX
     [SerializeField] private AudioClip jumpSound;
     //[SerializeField] private AudioClip enemyCollisionSound;
-    // Time that player can be airborne, for extended jump control, and time spawn platform is active on itself
-    [SerializeField] private float maxJumpTime;
+    // Time that player can be airborne, for extended jump control, and safety time gap for repeated collision
+    [SerializeField] private float maxJumpTime, collGapTime;
     //public Projectile currentProj;
     // Variables for ground and platform edge detection
     protected RaycastHit2D groundHit;
@@ -24,8 +24,8 @@ public class PlayerScript : Character
     protected float raycastMaxDistance;
     // Runtime components
     private Inventory inventory; 
-    // Status variables for item and platform effect
-    public bool isShelled, onIce;
+    // Status variables for item and platform effect, and item repeated collision
+    public bool isShelled, onIce, isCollidable = true;
     private float currentJumpTimer; 
     
     protected override void Awake()
@@ -142,7 +142,9 @@ public class PlayerScript : Character
     {
         base.OnCollisionEnter2D(collision);
         // Checking for Enemy collision
-        if(collision.gameObject.tag == "Enemies") {
+        if(collision.gameObject.tag == "Enemies" && isCollidable) {
+            isCollidable = false;
+            StartCoroutine(ResetCollisionCoroutine());
             Enemy collidingEnemy = collision.gameObject.GetComponent<Enemy>();
             //masterController.soundController.PlaySound(enemyCollisionSound, 0.4f);
             // If enemy is flipped, it can be kicked
@@ -179,7 +181,7 @@ public class PlayerScript : Character
     private void CheckForShell()
     {
         // Checking if player currently has shell item to defend from collision
-        if(inventory.currentItem != null && inventory.currentItem.itemName == "HardShell") {
+        if(inventory.currentItem != null && inventory.currentItem.itemName == "HardShell" && !inventory.currentItem.onUse) {
             inventory.currentItem.UseEffect();
         // If not, player is defeated
         } else {
@@ -192,7 +194,7 @@ public class PlayerScript : Character
         // Marking dead status and doing animation
         isDead = true;
         animator.SetTrigger("died");
-        //inventory.LoseItem();
+        inventory.LoseItem();
         Hold();
         base.Jump();
         // Disabling collider so player goes off-screen
@@ -295,5 +297,12 @@ public class PlayerScript : Character
     public void SetLayer(int layer)
     {
         gameObject.layer = layer;
+    }
+    // Marking player as collidable after a safety gap, to avoid repeated collision since it messes with defensive items
+    private IEnumerator ResetCollisionCoroutine()
+    {
+        yield return new WaitForSeconds(collGapTime);
+
+        isCollidable = true;
     }
 }

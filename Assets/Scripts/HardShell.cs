@@ -10,6 +10,7 @@ public class HardShell : UsableItem
     public override void UseEffect()
     {
         onUse = true;
+        usesLeft -= 1;
         animator.SetTrigger("playerHit");
         StartCoroutine(UsageCoroutine());
     }
@@ -37,7 +38,7 @@ public class HardShell : UsableItem
     {
         onUse = false;
         StopAllCoroutines();
-        gameObject.SetActive(false);
+        CheckUses();
     }
     // Giving some time gap so player isnt defeated by same hit that uses shell
     protected override IEnumerator UsageCoroutine()

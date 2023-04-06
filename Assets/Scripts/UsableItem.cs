@@ -65,7 +65,6 @@ public abstract class UsableItem : Item
     {
         if(usesLeft == 0) {
             playerInventory.LoseItem();
-            Vanish();
         }
     }
     // Overriding vanish to reset use variables
