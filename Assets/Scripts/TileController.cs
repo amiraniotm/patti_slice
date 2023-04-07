@@ -10,19 +10,18 @@ public class TileController : MonoBehaviour
     // References to all tiles and tilemaps
     [SerializeField] private List<TileData> tileDatas;
     // [SerializeField] private List<TileBase> availableLevelTiles;
-    // [SerializeField] private GameObject platformObject, wallObject;
+    [SerializeField] private GameObject platformObject, wallObject;
     [SerializeField] private Tilemap platformsTilemap; 
-    //[SerializeField] private MapDisplacementController mapDisController;
+    [SerializeField] private MapScrollController scrollController;
     [SerializeField] private float flipDuration;
     // Dict to store current tiles and tile types on map
     private Dictionary<TileBase,TileData> dataFromTiles;
     // Runtime objects references
-    // private Renderer[] platformRenderers;
+    private Renderer[] platformRenderers;
     // public MasterController masterController;
-    // public BoxCollider2D playerCollider;
     // Control variables
     private Vector3Int newTilePosition;
-    // public bool platformsMoved;
+    private bool platformsMoved;
     private BoxCollider2D flipCollider;
     
     private void Awake()
@@ -31,26 +30,25 @@ public class TileController : MonoBehaviour
         flipCollider = GetComponent<BoxCollider2D>();
         // Getting initial tiles on map
         RefreshTileList();
-        //platformRenderers = platformObject.GetComponentsInChildren<Renderer>();
-        //playerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>();
+        platformRenderers = platformObject.GetComponentsInChildren<Renderer>();
         //masterController = GameObject.FindGameObjectWithTag("MasterController").GetComponent<MasterController>();
         //masterController.SetTileManager(this);
     }
 
-    // private void Update()
-    // {     
-    //     if(masterController.scrollPhase) {
-    //         bool platformsVisible = ArePlatformsVisible();
+    private void Update()
+    {     
+        if(scrollController.isScrolling) {
+            bool platformsVisible = ArePlatformsVisible();
 
-    //         if(!platformsVisible && !platformsMoved) {
-    //             platformsMoved = true;
-    //             //mapDisController.MoveStage();
-    //         } else if(platformsVisible && platformsMoved) {
-    //             platformsMoved = false;
-    //             //mapDisController.StopPlatformsAndObstacles();
-    //         }
-    //     }
-    // }
+            if(!platformsVisible && !platformsMoved) {
+                platformsMoved = true;
+                scrollController.MoveStage();
+            } else if(platformsVisible && platformsMoved) {
+                platformsMoved = false;
+                scrollController.StopPlatformsAndObstacles();
+            }
+        }
+    }
 
     public void RefreshTileList()
     {
@@ -157,18 +155,18 @@ public class TileController : MonoBehaviour
     //     }
     // }
 
-    // public bool ArePlatformsVisible()
-    // {
-    //     foreach(var renderer in platformRenderers)
-    //     {
-    //         if(renderer.isVisible)
-    //         {
-    //             return true;
-    //         }
-    //     }
+    public bool ArePlatformsVisible()
+    {
+        foreach(var renderer in platformRenderers)
+        {
+            if(renderer.isVisible)
+            {
+                return true;
+            }
+        }
 
-    //     return false;
-    // }
+        return false;
+    }
     // Finishing flip by disabling flip collider
     private IEnumerator HideFlipColliderCoroutine()
     {

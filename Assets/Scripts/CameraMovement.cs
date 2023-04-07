@@ -94,20 +94,20 @@ public class CameraMovement : MonoBehaviour
         }
     }
 
-    // public Vector3 GetCurrentCorner(string corner)
-    // {
-    //     Vector3 cornerPos = Vector3.zero;
+    public Vector3 GetCorner(string corner)
+    {
+        Vector3 cornerPos = Vector3.zero;
 
-    //     if(corner == "lowerleft") {
-    //         cornerPos = new Vector3(transform.position.x - (screenWidth / 2),
-    //                                 transform.position.y - (screenHeight / 2),
-    //                                 transform.position.z);
-    //     } else {
-    //         cornerPos = new Vector3(transform.position.x + (screenWidth / 2),
-    //                                 transform.position.y + (screenHeight / 2),
-    //                                 transform.position.z);
-    //     }
+        if(corner == "lowerleft") {
+            cornerPos = new Vector3(transform.position.x - (screenWidth / 2),
+                                    transform.position.y - (screenHeight / 2),
+                                    transform.position.z);
+        } else {
+            cornerPos = new Vector3(transform.position.x + (screenWidth / 2),
+                                    transform.position.y + (screenHeight / 2),
+                                    transform.position.z);
+        }
 
-    //     return cornerPos;
-    // } 
+        return cornerPos;
+    } 
 }

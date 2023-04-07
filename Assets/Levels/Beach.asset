@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelType: beach
   levelTime: 40
-  levelPhases: 1
+  levelPhases: 2
   maxObstacles: 2
   extraPhaseEnemies: 1
   extraPhaseTime: 20

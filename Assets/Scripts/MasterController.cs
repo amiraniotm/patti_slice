@@ -23,9 +23,9 @@ public class MasterController : MonoBehaviour
     public LevelDisplay levelDisplay;
     public EnemyCounter enemyCounter;
     public ItemController itemController;
+    private MapScrollController scrollController;
     //public GameObject entryPoint, backgroundObject, MDCObject;
     //public TileController tileController;
-    //private MapDisplacementController mapDisController;
     // In-game tracking variables
     public bool changingLevel, levelStarted, gameOver, timeUp, startingScroll, scrollPhase, bossPhase;
     public int currentLevelKey, currentPhaseKey, pointsCount;    
@@ -196,7 +196,7 @@ public class MasterController : MonoBehaviour
     {
         scrollPhase = false;
         // Stopping scroll mechanics
-        //mapDisController.EndDisplacement();
+        scrollController.EndDisplacement();
         //levelDisplay.timePanel.SetActive(true);
         // Adding extra bonus time per phase
         timeCount += currentLevel.extraPhaseTime;
@@ -231,9 +231,9 @@ public class MasterController : MonoBehaviour
     //     }
     //     //After object references are set, get Script component references
     //     //player = playerObject.GetComponent<PlayerMovement>();
-    //     //mapDisController = MDCObject.GetComponent<MapDisplacementController>();
+    //     //scrollController = MDCObject.GetComponent<MapDisplacementController>();
     //     //DOES THIS GO HERE???
-    //     //mapDisController.SetDisplacementObjects(this);
+    //     //scrollController.SetDisplacementObjects(this);
     // }
 
     // Holds screen or time on phase change:
@@ -256,10 +256,13 @@ public class MasterController : MonoBehaviour
             Time.timeScale = 1;
             itemController.StartItems(5.0f);
         } else if(phaseType == "scroll") {
+            if(scrollController == null) {
+                scrollController = GameObject.FindGameObjectWithTag("ScrollController").GetComponent<MapScrollController>();
+            }
             scrollPhase = true;
             currentPhaseKey += 1;
             startingScroll = false;
-            //mapDisController.StartDisplacement();
+            scrollController.StartDisplacement();
         } else if(phaseType == "over") {
             levelDisplay.ToggleGameOverScreen();
         }

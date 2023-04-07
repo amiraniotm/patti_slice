@@ -78,9 +78,9 @@ public class LevelDisplay : MonoBehaviour
             levelText.text = "Level " + levelToDisplay.ToString("0") + " - " + phaseToDisplay.ToString("0");
         } else if(masterController.pauseController.gamePaused) {
             levelText.text = "PAUSE";
-        // } else if(masterController.startingDisplacement) {
-        //     levelText.color = Color.yellow;
-        //     levelText.text = "CLIMB!!";
+        } else if(masterController.startingScroll) {
+            levelText.color = Color.yellow;
+            levelText.text = "CLIMB!!";
         } else if (onGameOverScreen) {
             levelText.text = "Final Score: " + masterController.pointsCount.ToString("0");
         } else {

@@ -62,7 +62,7 @@ public abstract class Character : MonoBehaviour
     // For platform collision, marks as grounded if character collides from above
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Platforms"){
+        if(collision.gameObject.tag == "Platforms" || collision.gameObject.tag == "ScrollPlatforms"){
             string collisionSide = platforms.DetectCollisionDirection(collision);
             
             if(collisionSide == "upper"){

@@ -1285,14 +1285,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef71a54c2c43e3b7a1ffa57df7bb449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panSpeed: 12
+  panSpeed: 8
   panMultiplier: 8
   masterController: {fileID: 2128383112}
-  currentPanTime: 0
-  screenWidth: 0
+  shakeDuration: 0.7
+  shakeMagnitude: 0.15
+  panCount: 0
+  shakeCount: 0
   screenHeight: 0
+  screenWidth: 0
+  panAdjDistance: 0
   panningEndPoint: {x: 0, y: 0, z: 0}
-  panAdjDist: 0
 --- !u!1 &524853496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,8 +1512,6 @@ MonoBehaviour:
   - {fileID: 1230337530}
   - {fileID: 1954575252}
   masterController: {fileID: 2128383112}
-  optionChangeSound: {fileID: 8300000, guid: 754dcc2f8b89fdee3bcc94cdebb9175b, type: 3}
-  optionSelectSound: {fileID: 8300000, guid: 060b630b28c95dc7686c06f90a5425e2, type: 3}
 --- !u!1 &714347603
 GameObject:
   m_ObjectHideFlags: 0
@@ -4569,7 +4570,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructionsPanel: {fileID: 1101809413}
   menuPanel: {fileID: 1192479204}
-  convertTimeSound: {fileID: 8300000, guid: 060b630b28c95dc7686c06f90a5425e2, type: 3}
   mainCamera: {fileID: 519420033}
   availableLevels:
   - {fileID: 11400000, guid: 95338c2655592c496a332e5fc67441d7, type: 2}

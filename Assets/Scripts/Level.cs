@@ -36,7 +36,7 @@ public class Level : ScriptableObject
             levelEnemies[i].Add("Reptlizard", 0);
             // Establishing enemy quantities. Level type is intended as a way of adding more levels with different enemy configurations
             if(levelType == "beach") {
-                levelEnemies[i]["Crabcatcher"] = 4;
+                levelEnemies[i]["Crabcatcher"] = 1;
                 levelEnemies[i]["ReptAgent"] = 0;
                 levelEnemies[i]["Reptbaby"] = 0;
                 levelEnemies[i]["Flamey"] = 0;

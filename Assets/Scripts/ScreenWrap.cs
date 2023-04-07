@@ -58,7 +58,7 @@ public class ScreenWrap : MonoBehaviour
         if(isCharacter) {
             characterScript.TriggerOffScreen();
         // If marked as leave, object is disabled
-        } else if(!doesLeave) {
+        } else if(doesLeave) {
             gameObject.SetActive(false);
         // And destroyed if marked as selfdestruct
         } else if (doesDestroy) {
