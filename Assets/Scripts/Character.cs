@@ -33,9 +33,9 @@ public abstract class Character : MonoBehaviour
         mainRenderer = GetComponent<Renderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        platforms = GameObject.FindGameObjectWithTag("Platforms").GetComponent<PlatformCollision>();
-        masterController = GameObject.FindGameObjectWithTag("MasterController").GetComponent<MasterController>();
-       
+        platforms = GameObject.FindObjectOfType<PlatformCollision>();
+        masterController = GameObject.FindObjectOfType<MasterController>();
+
         initialPosition = transform.position;
         adjustedJumpSpeed = maxJumpSpeed;
         adjustedWalkSpeed = maxWalkSpeed;
